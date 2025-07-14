@@ -3,112 +3,69 @@
 {% extends "layouts/default.html" %}
 {% block content %}
 
-  <main class="main">
-    {% include "includes/breadcrumbs.html" %}
-    <section class="section services">
-      <div class="container">
-        <div class="services__box">
-          <h2 class="title">
-            {% set sectionClass = "services" %}
-            {% for item in titles %}
-              {% if item[sectionClass] %}
-                {{ item[sectionClass] }}
-              {% endif %}
-            {% endfor %}
-          </h2>
+<main class="main">
+  {% include "includes/banner.html" %}
 
-          <ul class="services__list">
-            {% for item in servicesItems %}
-              {% include "includes/service.html" %}
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section variants">
-      <div class="container">
-        <div class="variants__box">
-          <h2 class="title">
-            {% set sectionClass = "variants" %}
-            {% for item in titles %}
-              {% if item[sectionClass] %}
-                {{ item[sectionClass] }}
-              {% endif %}
-            {% endfor %}
+  <section class="section schedule bg-white-gradient">
+    <div class="container">
+      <div class="schedule__box">
+        <a class="schedule__card" href="{{schedule.link-schedule}}">
+          <h2 class="schedule__title">
+            <span class="orange">
+              Расписание
+            </span>
+            занятий
           </h2>
-          <div class="variants__text-box">
-            <p class="variants__text">
-              {{variantsContent}}
-            </p>
-          </div>
-          <ul class="variants__list">
-            {% for item in variantsItems %}
-              {% include "includes/variant.html" %}
-            {% endfor %}
-            <li class="variants__item">
-              {% include "includes/variant-form.html" %}
+          <ul class="schedule__list">
+            {% for day in schedule.days %}
+            <li class="schedule__item">
+              <div class="schedule__day-box">
+                <p class="schedule__day">
+                  {{day.day}}
+                </p>
+              </div>
+              <div class="schedule__info">
+                <p class="schedule__info-title">
+                  {{day.title}}
+                </p>
+                <p class="schedule__time">
+                  {{day.time}}
+                </p>
+                <p class="schedule__master">
+                  {{day.master}}
+                </p>
+              </div>
             </li>
+            {% endfor %}
           </ul>
-        </div>
+        </a>
+        <a class="schedule__card" href="{{schedule.link-prices}}">
+          <h2 class="schedule__title">
+            <span class="orange">
+              Цена на
+            </span>
+            клубные карты
+          </h2>
+          <div class="schedule__img-box">
+            <img src="{{schedule.priceImg}}" alt="">
+          </div>
+        </a>
       </div>
-    </section>
-    <section class="section ideas">
-      <div class="container">
-        <h2 class="title">
-          {% set sectionClass = "ideas" %}
-          {% for item in titles %}
-            {% if item[sectionClass] %}
-              {{ item[sectionClass] }}
-            {% endif %}
-          {% endfor %}
-        </h2>
-        <ul class="ideas__list">
-          {% for item in ideasItems %}
-            {% include "includes/idea.html" %}
-          {% endfor %}
-        </ul>
-      </div>
-
-    </section>
-    <section class="section parameters">
-      <div class="container">
-        <h2 class="title">
-          {% set sectionClass = "parameters" %}
-          {% for item in titles %}
-            {% if item[sectionClass] %}
-              {{ item[sectionClass] }}
-              <span>
-                {% if item.color %}
-                  {{ item.color }}
-                {% endif %}
-              </span>
-            {% endif %}
-          {% endfor %}
-        </h2>
-        <ul class="parameters__list">
-          {% for item in parametersItems %}
-            {% include "includes/parameter.html" %}
-          {% endfor %}
-        </ul>
-      </div>
-    </section>
-    <section class="section prices">
-      <div class="container">
-        <h2 class="title">
-          {% set sectionClass = "price" %}
-          {% for item in titles %}
-            {% if item[sectionClass] %}
-              {{ item[sectionClass] }}
-            {% endif %}
-          {% endfor %}
-        </h2>
-        <ul class="prices__list" >
-          {% for item in pricesItems %}
-            {% include "includes/price.html" %}
-          {% endfor %}
-        </ul>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
+  <section class="section services">
+    <div class="container">
+      <h2 class="services__title">
+        {{service.title}}
+      </h2>
+      <p class="services__text white">
+        {{service.subtitle1}}
+      </p>
+      <p class="services__text gray">
+        {{service.subtitle2}}
+      </p>
+    </div>
+  </section>
+</main>
 
 {% endblock %}

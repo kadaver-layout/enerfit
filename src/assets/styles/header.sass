@@ -1,0 +1,75 @@
+@use  "_vars" as *
+
+.header
+  background: $black-color
+  &__box
+    display: grid
+    grid-auto-flow: column
+    justify-content: space-between
+    padding: 20px 0
+    gap: 45px
+    align-items: center
+  &__list
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    gap: 20px 45px
+    justify-items: start
+    align-items: center
+    align-content: center
+  &__item
+    display: grid
+    justify-items: start
+    align-items: center
+  &__link
+    display: inline
+    font-family: $font-family
+    font-weight: 400
+    font-size: 14px
+    line-height: 100%
+    text-transform: uppercase
+    color: $white-color
+    transition: color $anim, transform $anim
+    position: relative
+    &:hover, &:active, &:focus
+      color: $orange-color
+      transform: scale(1.2)
+  &__link-modal
+    font-family: $font-family
+    font-weight: 400
+    font-size: 14px
+    line-height: 100%
+    text-transform: uppercase
+    color: $orange-color
+  &__contact
+    display: grid
+    gap: 10px
+  &__phone
+    gap: 10px
+    position: relative
+    font-family: $font-family
+    font-weight: 500
+    font-size: 34px
+    line-height: 100%
+    color: $white-color
+  &__contact-box
+    display: grid
+    grid-auto-flow: column
+    gap: 10px
+    align-items: center
+  &__address
+    font-family: $font-family
+    font-weight: 500
+    font-size: 14px
+    line-height: 100%
+    text-transform: uppercase
+    color: $white-color
+  &__btn
+    font-family: $font-family
+    font-weight: 400
+    font-size: 14px
+    line-height: 120%
+    text-transform: uppercase
+    text-align: center
+    color: $white-color
+    padding: 8px 27px
+    background-color: $orange-color

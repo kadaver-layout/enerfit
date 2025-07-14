@@ -1,0 +1,33 @@
+<header class="header">
+  <div class="container">
+    <div class="header__box">
+      <a href="/">
+        <img class="header__logo" src={{header.logo}} alt="logo">
+      </a>
+      <nav class="header__nav">
+        <ul class="header__list">
+          {% for link in header.links %}
+          <li class="header__item">
+            <a class="header__link" href={{link.href}}>{{link.title}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <a href="#" id="modal" class="header__link-modal">
+        {{header.linkText}}
+      </a>
+      <div class="header__contact">
+        <div class="header__contact-box">
+          <a href="{{header.waLink}}">
+            <img width="31" height="31" src="{{header.waImg}}" alt="Ссылка на WhatsApp">
+          </a>
+          <a href="tel:+74862{{header.tel}}" class="header__phone">{{header.tel}}</a>
+        </div>
+        <p class="header__address">{{header.address}}</p>
+      </div>
+      <button class="header__btn">
+        Личный<br>кабинет
+      </button>
+    </div>
+  </div>
+</header>

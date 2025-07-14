@@ -1,0 +1,26 @@
+@use  "_vars" as *
+
+.banner
+  position: relative
+  width: 100%
+  min-height: 978px
+  background: url(/assets/img/banner.jpg) no-repeat center/cover
+  display: grid
+  align-items: center
+  align-content: center
+  &__title
+    position: relative
+    font-family: $font-title
+    font-style: italic
+    font-weight: 700
+    font-size: 95px
+    line-height: 100%
+    letter-spacing: -0.01em
+    text-transform: uppercase
+    text-align: start
+  &__box
+    display: grid
+    align-items: center
+    height: 100%
+    padding: 15px 0
+    background: $background-grey

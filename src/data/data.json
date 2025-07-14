@@ -4,48 +4,104 @@
       {
         "title": "Главная",
         "href": "/"
-      }, 
+      },
       {
         "title": "Услуги",
-        "href": "service"
-      }, 
+        "href": "/service.html"
+      },
       {
         "title": "Раписание",
-        "href": "schedule"
-      }, 
+        "href": "/schedule.html"
+      },
       {
         "title": "Акции",
-        "href": "stocks"
-      }, 
+        "href": "/stocks.html"
+      },
       {
         "title": "Контакты",
-        "href": "contacts"
-      }, 
+        "href": "/contacts.html"
+      },
       {
-        "title":  "О клубе",
-        "href": "about"
-      }, 
+        "title": "О клубе",
+        "href": "/about.html"
+      },
       {
         "title": "Цена на фитнес",
-        "href": "prices"
-      }, 
+        "href": "/prices.html"
+      },
       {
         "title": "Аэробные направления",
-        "href": "aerobic"
+        "href": "/aerobic.html"
       },
       {
         "title": "Команда",
-        "href": "team"
-        
-      }, 
+        "href": "/team.html"
+      },
       {
         "title": "Фотогалерея",
-        "href": "photos"
+        "href": "/photos.html"
       }
     ],
     "tel": "48-70-50",
+    "waLink": "https://wa.me/74862487050",
+    "waImg": "assets/img/whatsapp_ico.svg",
     "address": "ул. Розы Люксембург, 4",
-    "btn-text": "Личный кабинет",
-    "link-text": "Хочу абонемент Fitness Energy"
+    "linkText": "Хочу абонемент Fitness Energy",
+    "logo": "assets/img/logo.png"
+  },
+  "schedule": {
+    "days": [
+      {
+        "day": "Понедельник",
+        "title": "SCULPT",
+        "time": "09:30",
+        "master": "Надежда Пронина"
+      },
+      {
+        "day": "Вторник",
+        "title": "AERO YOGA",
+        "time": "07:45",
+        "master": "Надежда Пузанова"
+      },
+      {
+        "day": "Среда",
+        "title": "FITBALL",
+        "time": "09:30",
+        "master": "Надежда Пронина"
+      },
+      {
+        "day": "Четверг",
+        "title": "AERO YOGA",
+        "time": "07:45",
+        "master": "Надежда Пузанова"
+      },
+      {
+        "day": "Пятница",
+        "title": "INTERVAL",
+        "time": "09:30",
+        "master": "Надежда Пронина"
+      },
+      {
+        "day": "Суббота",
+        "title": "LADY+(секц)",
+        "time": "10:00",
+        "master": "Надежда Ковалева"
+      },
+      {
+        "day": "Воскресенье",
+        "title": "AERO YOGA",
+        "time": "10:45",
+        "master": "Надежда Пузанова"
+      }
+    ],
+    "link-schedule": "/schedule.html",
+    "link-prices": "/prices.html",
+    "priceImg": "assets/img/card-item_gray.png",
+    "priceImgAlt": "Фотографии клубных карт"
+  },
+  "service": {
+    "title": "Услуги фитнес клуба",
+    "subtitle1": "это 8 фитнес-площадок", 
+    "subtitle2": "для решения разных задач"
   }
 }

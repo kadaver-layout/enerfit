@@ -4,11 +4,12 @@
 
 .container
   display: grid
-  max-width: 1230px
+  max-width: 1700px
   padding-left: 30px
   padding-right: 30px
   margin: 0 auto
   min-width: 360px
+  width: 100%
   @media all and ($l)
     padding-left: 30px
     padding-right: 30px
@@ -26,9 +27,8 @@ body
   font-family: $font-family
   overflow-x: hidden
   min-height: 100vh
-  background-image: url("../img/background.jpg")
-  background-repeat: repeat
-  background-position: center center
+  background: $black-color
+  letter-spacing: -0.01em
 
 ul
   list-style-type: none
@@ -78,23 +78,18 @@ input, textarea
   outline: none
   border: none
 
-picture, source 
+picture, source
   display: contents
 
 .section
-  padding-top: 23px
-  padding-bottom: 8px
+  padding-top: 80px
+  padding-bottom: 80px
 
+.white
+  color: $white-color
+.orange
+  color: $orange-color
 
-.title
-  font-family: $font-title
-  font-weight: 700
-  font-size: 38px
-  color: $black-color
-  display: grid
-  justify-content: center
-  text-align: center
-  @media all and ($m)
-    font-size: 28px
-  @media all and ($s)
-    font-size: 22px
+.bg-white-gradient
+  background: linear-gradient(135deg, #fff 81.31%, #f1f2f4 100%)
+
