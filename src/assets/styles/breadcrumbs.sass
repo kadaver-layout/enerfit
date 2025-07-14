@@ -1,0 +1,40 @@
+@use  "_vars" as *
+.breadcrumbs
+  margin-bottom: 20px
+  display: inline
+  &__box
+    padding-top: 20px
+  &__link
+    display: inline
+    font-weight: 400
+    font-size: 13px
+    line-height: 114%
+    color: $black-color
+    transition: color $anim
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      width: 0
+      height: 1px
+      background: $orange-color
+      bottom: -1px
+      opacity: 0
+      left: 0
+      transition: width $anim, opacity $anim
+    &:hover::before, &:active::before, &:focus::before
+      width: calc(100% - 8px)
+      opacity: 1
+  .arrow
+    position: relative
+    &::after
+      content: '-'
+      display: inline-block
+      padding-left: 4px
+  &__title
+    display: inline
+    font-weight: 400
+    font-size: 13px
+    line-height: 114%
+    color: $orange-color
+    position: relative

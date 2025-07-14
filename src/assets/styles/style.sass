@@ -1,0 +1,100 @@
+@use  "_vars" as *
+*
+  box-sizing: border-box
+
+.container
+  display: grid
+  max-width: 1230px
+  padding-left: 30px
+  padding-right: 30px
+  margin: 0 auto
+  min-width: 360px
+  @media all and ($l)
+    padding-left: 30px
+    padding-right: 30px
+  @media all and ($m)
+    padding-left: 30px
+    padding-right: 30px
+  @media all and ($s)
+    padding-left: 16px
+    padding-right: 16px
+
+body
+  line-height: 1.2
+  margin: 0
+  position: relative
+  font-family: $font-family
+  overflow-x: hidden
+  min-height: 100vh
+  background-image: url("../img/background.jpg")
+  background-repeat: repeat
+  background-position: center center
+
+ul
+  list-style-type: none
+  padding-inline-start: 0
+a,
+p,
+li,
+ul,
+span
+  margin-block-start: 0
+  margin-block-end: 0
+  margin-inline-start: 0px
+  margin-inline-end: 0px
+
+h1, h2, h3, h4, h5, h6
+  margin-block-start: 0
+  margin-block-end: 0
+
+button
+  padding-block: 0
+  padding-inline: 0
+  border-width: 0
+  cursor: pointer
+  background: transparent
+
+textarea
+  resize: none
+
+img
+  max-width: 100%
+  display: block
+
+a
+  text-decoration: none
+  &:active, &:focus, &:hover
+    text-decoration: none
+
+.d-n
+  display: none !important
+.d-block
+  display: block !important
+.m-d-n
+  @media all and ($s)
+    display: none !important
+
+input, textarea
+  outline: none
+  border: none
+
+picture, source 
+  display: contents
+
+.section
+  padding-top: 23px
+  padding-bottom: 8px
+
+
+.title
+  font-family: $font-title
+  font-weight: 700
+  font-size: 38px
+  color: $black-color
+  display: grid
+  justify-content: center
+  text-align: center
+  @media all and ($m)
+    font-size: 28px
+  @media all and ($s)
+    font-size: 22px

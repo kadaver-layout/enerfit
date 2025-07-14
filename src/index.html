@@ -1,0 +1,114 @@
+{% set title = "Балконы и лоджии" %}
+{% set subTitle = "Отделка балконов и лоджий" %}
+{% extends "layouts/default.html" %}
+{% block content %}
+
+  <main class="main">
+    {% include "includes/breadcrumbs.html" %}
+    <section class="section services">
+      <div class="container">
+        <div class="services__box">
+          <h2 class="title">
+            {% set sectionClass = "services" %}
+            {% for item in titles %}
+              {% if item[sectionClass] %}
+                {{ item[sectionClass] }}
+              {% endif %}
+            {% endfor %}
+          </h2>
+
+          <ul class="services__list">
+            {% for item in servicesItems %}
+              {% include "includes/service.html" %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section variants">
+      <div class="container">
+        <div class="variants__box">
+          <h2 class="title">
+            {% set sectionClass = "variants" %}
+            {% for item in titles %}
+              {% if item[sectionClass] %}
+                {{ item[sectionClass] }}
+              {% endif %}
+            {% endfor %}
+          </h2>
+          <div class="variants__text-box">
+            <p class="variants__text">
+              {{variantsContent}}
+            </p>
+          </div>
+          <ul class="variants__list">
+            {% for item in variantsItems %}
+              {% include "includes/variant.html" %}
+            {% endfor %}
+            <li class="variants__item">
+              {% include "includes/variant-form.html" %}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section ideas">
+      <div class="container">
+        <h2 class="title">
+          {% set sectionClass = "ideas" %}
+          {% for item in titles %}
+            {% if item[sectionClass] %}
+              {{ item[sectionClass] }}
+            {% endif %}
+          {% endfor %}
+        </h2>
+        <ul class="ideas__list">
+          {% for item in ideasItems %}
+            {% include "includes/idea.html" %}
+          {% endfor %}
+        </ul>
+      </div>
+
+    </section>
+    <section class="section parameters">
+      <div class="container">
+        <h2 class="title">
+          {% set sectionClass = "parameters" %}
+          {% for item in titles %}
+            {% if item[sectionClass] %}
+              {{ item[sectionClass] }}
+              <span>
+                {% if item.color %}
+                  {{ item.color }}
+                {% endif %}
+              </span>
+            {% endif %}
+          {% endfor %}
+        </h2>
+        <ul class="parameters__list">
+          {% for item in parametersItems %}
+            {% include "includes/parameter.html" %}
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+    <section class="section prices">
+      <div class="container">
+        <h2 class="title">
+          {% set sectionClass = "price" %}
+          {% for item in titles %}
+            {% if item[sectionClass] %}
+              {{ item[sectionClass] }}
+            {% endif %}
+          {% endfor %}
+        </h2>
+        <ul class="prices__list" >
+          {% for item in pricesItems %}
+            {% include "includes/price.html" %}
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+  </main>
+
+{% endblock %}

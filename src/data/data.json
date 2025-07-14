@@ -1,0 +1,51 @@
+{
+  "header": {
+    "links": [
+      {
+        "title": "Главная",
+        "href": "/"
+      }, 
+      {
+        "title": "Услуги",
+        "href": "service"
+      }, 
+      {
+        "title": "Раписание",
+        "href": "schedule"
+      }, 
+      {
+        "title": "Акции",
+        "href": "stocks"
+      }, 
+      {
+        "title": "Контакты",
+        "href": "contacts"
+      }, 
+      {
+        "title":  "О клубе",
+        "href": "about"
+      }, 
+      {
+        "title": "Цена на фитнес",
+        "href": "prices"
+      }, 
+      {
+        "title": "Аэробные направления",
+        "href": "aerobic"
+      },
+      {
+        "title": "Команда",
+        "href": "team"
+        
+      }, 
+      {
+        "title": "Фотогалерея",
+        "href": "photos"
+      }
+    ],
+    "tel": "48-70-50",
+    "address": "ул. Розы Люксембург, 4",
+    "btn-text": "Личный кабинет",
+    "link-text": "Хочу абонемент Fitness Energy"
+  }
+}
