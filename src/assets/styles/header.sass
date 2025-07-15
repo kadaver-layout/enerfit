@@ -2,6 +2,10 @@
 
 .header
   background: $black-color
+  border-bottom: 1px solid rgba(255, 106, 0, 0.5)
+  position: sticky
+  z-index: 10
+  top: 0
   &__box
     display: grid
     grid-auto-flow: column
@@ -30,9 +34,10 @@
     color: $white-color
     transition: color $anim, transform $anim
     position: relative
-    &:hover, &:active, &:focus
+    &:hover, &:active, &:focus, &.active
       color: $orange-color
       transform: scale(1.2)
+      text-decoration: underline
   &__link-modal
     font-family: $font-family
     font-weight: 400

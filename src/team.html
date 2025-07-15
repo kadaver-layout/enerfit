@@ -1,0 +1,84 @@
+{% set title = "Команда" %}
+{% extends "layouts/default.html" %}
+{% block content %}
+
+<main class="main">
+  <section aria-labelledby="trainers" class="team-page">
+    <div class="container">
+      <h1 class="title-page team-page__title">
+        Команда <span class="orange">
+          тренерского состава
+        </span>
+      </h1>
+      <ul class="team-page__list">
+        {% for trainers in teamPage.trainers %}
+        <li class="team-page__item">
+          <a class="team-page__link" href="http://">
+            {% if trainers.img %}
+            <img class="team-page__img" src="{{trainers.img}}" alt="{{trainers.alt}}">
+            {% else %}
+            <img class="team-page__img" src="{{teamPage.notFoundImg}}" alt="Нет фотографии">
+            {% endif %}
+            <div class="team-page__name-box">
+              {% if trainers.experience %}
+              <p class="team-page__experience">
+                стаж с {{trainers.experience}} г
+              </p>
+              {% endif %}
+              <h2 class="team-page__name">
+                {{trainers.name}}
+              </h2>
+            </div>
+            <div class="team-page__position-box">
+              <p class="team-page__position">
+                {{trainers.position}}
+              </p>
+            </div>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+
+  <section area-labelledby="admins" class="team-page">
+    <div class="container">
+      <h1 class="title-page team-page__title">
+        Команда <span class="orange">
+          администраторов
+        </span>
+      </h1>
+
+      <ul class="team-page__list">
+        {% for admins in teamPage.admins %}
+        <li class="team-page__item">
+          <a class="team-page__link" href="http://">
+            {% if admins.img %}
+            <img class="team-page__img" src="{{admins.img}}" alt="{{admins.alt}}">
+            {% else %}
+            <img class="team-page__img" src="{{teamPage.notFoundImg}}" alt="Нет фотографии">
+            {% endif %}
+            <div class="team-page__name-box">
+              {% if admins.experience %}
+              <p class="team-page__experience">
+                стаж с {{admins.experience}} г
+              </p>
+              {% endif %}
+              <h2 class="team-page__name">
+                {{admins.name}}
+              </h2>
+            </div>
+            <div class="team-page__position-box">
+              <p class="team-page__position">
+                {{admins.position}}
+              </p>
+            </div>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</main>
+{% endblock %}

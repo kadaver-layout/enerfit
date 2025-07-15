@@ -1,0 +1,31 @@
+{% set title = "Акции" %}
+{% extends "layouts/default.html" %}
+{% block content %}
+
+<main class="main">
+  <section class="stocks-page">
+    <div class="container">
+      <h1 class="title-page stocks-page__title">
+        Акции
+      </h1>
+      <ul class="stocks-page__list">
+        {% for item in stocksPage.cards %}
+        <li class="stocks-page__item">
+          <img class="stocks-page__img" src="{{item.img}}" alt="{{item.alt}}">
+          <div class="stocks-page__title-box">
+            <h2 class="stocks-page__title-item">
+              {{item.title}}
+            </h2>
+          </div>
+          <div class="stocks-page__text-box">
+            <p class="stocks-page__text">
+              {{item.text}}
+            </p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</main>
+{% endblock %}

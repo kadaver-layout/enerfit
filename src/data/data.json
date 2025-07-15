@@ -1,49 +1,56 @@
 {
-  "libsCss": [
-    "norm",
-    "splide.min"
-  ],
+  "libsCss": ["norm", "splide.min"],
   "header": {
     "links": [
       {
         "title": "Главная",
-        "href": "/"
+        "href": "/",
+        "data": "home"
       },
       {
         "title": "Услуги",
-        "href": "/service.html"
+        "href": "/service.html",
+        "data": "service"
       },
       {
         "title": "Раписание",
-        "href": "/schedule.html"
+        "href": "/schedule.html",
+        "data": "schedule"
       },
       {
         "title": "Акции",
-        "href": "/stocks.html"
+        "href": "/stocks.html",
+        "data": "stocks"
       },
       {
         "title": "Контакты",
-        "href": "/contacts.html"
+        "href": "/contacts.html",
+        "data": "contacts"
       },
       {
         "title": "О клубе",
-        "href": "/about.html"
+        "href": "/about.html",
+        "data": "about"
       },
       {
         "title": "Цена на фитнес",
-        "href": "/prices.html"
+        "href": "/prices.html",
+        "data": "prices"
       },
       {
         "title": "Аэробные направления",
-        "href": "/aerobic.html"
+        "href": "/aerobic.html",
+        "data": "aerobic"
       },
       {
         "title": "Команда",
-        "href": "/team.html"
+        "href": "/team.html",
+        "data": "team"
       },
       {
         "title": "Фотогалерея",
-        "href": "/photos.html"
+        "href": "/photos.html",
+        "data": "photos"
       }
     ],
     "tel": "48-70-50",
@@ -157,6 +164,376 @@
       "title": "ОГРНИП",
       "text": "324508100220861"
     }
+  ],
+  "stocksPage": {
+    "title": "Акции",
+    "cards": [
+      {
+        "img": "assets/img/stocks1.jpg",
+        "alt": "Фотография акции",
+        "title": "Скидка именинникам",
+        "text": "10% скидка в Ваш день рождения!"
+      },
+      {
+        "img": "assets/img/stocks2.jpg",
+        "alt": "Фотография акции",
+        "title": "Вместе дешевле",
+        "text": "Приходи заниматься с другом! Вместе не только веселее, но и выгоднее!"
+      },
+      {
+        "img": "assets/img/stocks3.jpg",
+        "alt": "Фотография акции",
+        "title": "Скидки на корпоративный фитнес",
+        "text": "Специальные условия для компаний, которые заботятся о своих сотрудниках"
+      },
+      {
+        "img": "assets/img/stocks4.jpg",
+        "alt": "Фотография акции",
+        "title": "Специальные условия",
+        "text": "Специальные условия военнослужащим и представителям силовых структур"
+      }
+    ]
+  },
+  "teamPage": {
+    "trainers": [
+      {
+        "img": "assets/img/trainer1.jpg",
+        "alt": "Фотография тренера",
+        "name": "Станислав Вишняков",
+        "position": "Почетный член клуба Fitness Energy",
+        "experience": 2005
+      },
+      {
+        "img": "assets/img/trainer2.jpg",
+        "alt": "Фотография тренера",
+        "name": "Сергей Слободин",
+        "position": "Тренер-инструктор по функциональному направлению",
+        "experience": 1995
+      },
+      {
+        "img": "assets/img/trainer3.jpg",
+        "alt": "Фотография тренера",
+        "name": "Владислав Медведев",
+        "position": "Персональный тренер",
+        "experience": 2017
+      },
+      {
+        "img": "assets/img/trainer4.jpg",
+        "alt": "Фотография тренера",
+        "name": "Сергей Чадин",
+        "position": "Тренер секции «Кикбоксинг»"
+      },
+      {
+        "img": "assets/img/trainer5.jpg",
+        "alt": "Фотография тренера",
+        "name": "Надежда Пронина",
+        "position": "Тренер персональных и групповых программ",
+        "experience": 1999
+      },
+      {
+        "img": "assets/img/trainer6.jpg",
+        "alt": "Фотография тренера",
+        "name": "Надежда Ковалева",
+        "position": "Фитнес-инструктор групповых программ"
+      },
+      {
+        "img": "assets/img/trainer7.jpg",
+        "alt": "Фотография тренера",
+        "name": "Юлия Жадько",
+        "position": "Персональный тренер, фитнес нутрицолог",
+        "experience": 2015
+      },
+      {
+        "img": "assets/img/trainer8.jpg",
+        "alt": "Фотография тренера",
+        "name": "Наталия Гусарова",
+        "position": "Персональный тренер, фитнес инструктор групповых программ"
+      },
+      {
+        "img": "assets/img/trainer9.jpg",
+        "alt": "Фотография тренера",
+        "name": "Ольга Спиридова",
+        "position": "Тренер-инструктор групповых программ"
+      },
+      {
+        "img": "assets/img/trainer10.jpg",
+        "alt": "Фотография тренера",
+        "name": "Вардан Оганнисянн",
+        "position": "Тренер секции «Грэпплинг»"
+      },
+      {
+        "name": "Надежда Пузанова"
+      },
+      {
+        "name": "Квитковская",
+        "experience": 2021
+      },
+      {
+        "name": "Басова",
+        "experience": 2022
+      },
+      {
+        "name": "Горохова",
+        "experience": 2021
+      },
+      {
+        "name": "Осипов",
+        "experience": 2021
+      }
+    ],
+    "admins": [
+      {
+        "img": "assets/img/trainer10.jpg",
+        "alt": "Фотография администратора",
+        "name": "Вардан Оганнисянн",
+        "position": "Администратор"
+      },
+      {
+        "name": "Надежда Пузанова"
+      },
+      {
+        "name": "Квитковская",
+        "experience": 2021
+      },
+      {
+        "name": "Басова"
+      },
+      {
+        "name": "Горохова"
+      },
+      {
+        "name": "Осипов"
+      }
+    ],
+    "notFoundImg": "assets/img/trainer-notFound.jpg"
+  },
+  "aerobic": {
+    "group1": [
+      {
+        "title": "FITBALL",
+        "img": "assets/img/aerobic-fitball.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "CYCLE",
+        "img": "assets/img/aerobic-cycle.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "FITNESS MIX",
+        "img": "assets/img/aerobic-fitness-mix.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "Функциональный тренинг",
+        "img": "assets/img/aerobic-funkcionalny.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "INTERVAL",
+        "img": "assets/img/aerobic-interval.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "Джампинг",
+        "img": "assets/img/aerobic-jumping.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "SCULPT",
+        "img": "assets/img/aerobic-sculpt.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "STEP",
+        "img": "assets/img/aerobic-step.jpg",
+        "alt": "Фотография тренировки"
+      }
+    ],
+    "group2": [
+      {
+        "title": "AEROSTRETCH",
+        "img": "assets/img/aerobic-aerostretch.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "BODY BALLET",
+        "img": "assets/img/aerobic-body-ballet.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "BOSU",
+        "img": "assets/img/aerobic-bosu.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "КАЛЛАНЕТИКА",
+        "img": "assets/img/aerobic-kallanetika.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "МФР Roll's",
+        "img": "assets/img/aerobic-mfr-rolls.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "PILATES",
+        "img": "assets/img/aerobic-pilates.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "ЙОГА",
+        "img": "assets/img/aerobic-yoga.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "Здоровая спина",
+        "img": "assets/img/aerobic-zdorovaya-spina.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "AERO YOGA",
+        "img": "assets/img/aerobic-aero-yoga.jpg",
+        "alt": "Фотография тренировки"
+      },
+      {
+        "title": "STRETCH",
+        "img": "assets/img/aerobic-stretch.jpg",
+        "alt": "Фотография тренировки"
+      }
+    ]
+  },
+
+  "scheduleStrengthTraining": [
+    {
+      "day": "Понедельник",
+      "trainings": [
+        {
+          "title": "SCULPT",
+          "time": "09:30",
+          "master": "Надежда Пронина"
+        },
+        {
+          "title": "AERO YOGA",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        },
+        {
+          "title": "FITBALL FITBALL FITBALL",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        },
+        {
+          "title": "AEROSTRETCH",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        }
+      ]
+    },
+    {
+      "day": "Вторник",
+      "trainings": [
+        {
+          "title": "SCULPT",
+          "time": "09:30",
+          "master": "Надежда Пронина"
+        },
+        {
+          "title": "AERO YOGA",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        },
+        {
+          "title": "FITBALL",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        }
+      ]
+    },
+    {
+      "day": "Среда",
+      "trainings": [
+        {
+          "title": "SCULPT",
+          "time": "09:30",
+          "master": "Надежда Пронина"
+        },
+        {
+          "title": "AERO YOGA",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        }
+      ]
+    },
+    {
+      "day": "Четверг",
+      "trainings": [
+        {
+          "title": "FITBALL",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        },
+        {
+          "title": "AEROSTRETCH",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        }
+      ]
+    },
+    {
+      "day": "Пятница",
+      "trainings": [
+        {
+          "title": "SCULPT",
+          "time": "09:30",
+          "master": "Надежда Пронина"
+        },
+        {
+          "title": "AERO YOGA",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        }
+      ]
+    },
+    {
+      "day": "Суббота",
+      "trainings": [
+        {
+          "title": "SCULPT",
+          "time": "09:30",
+          "master": "Надежда Пронина"
+        },
+        {
+          "title": "AERO YOGA",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        },
+        {
+          "title": "SCULPT",
+          "time": "09:30",
+          "master": "Надежда Пронина"
+        },
+        {
+          "title": "AERO YOGA",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        }
+      ]
+    },
+    {
+      "day": "Воскресенье",
+      "trainings": [
+        {
+          "title": "SCULPT",
+          "time": "09:30",
+          "master": "Надежда Пронина"
+        },
+        {
+          "title": "AERO YOGA",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        }
+      ]
+    }
   ]
 }
-

@@ -1,0 +1,73 @@
+{% set title = "Расписание занятий" %}
+{% extends "layouts/default.html" %}
+{% block content %}
+
+<main class="main">
+  <section aria-labelledby="schedule-strength-training" class="schedule-page red-block">
+    <div class="container">
+      <h1 class="title-page schedule-page__title">
+        <span class="schedule-page__color">Расписание</span> силовых занятий
+      </h1>
+      <ul class="schedule-page__list">
+        {% for item in scheduleStrengthTraining %}
+        <li class="schedule-page__item">
+          <div class="schedule-page__day-box">
+            <p class="schedule-page__day">
+              {{item.day}}
+            </p>
+
+          </div>
+          {% for training in item.trainings %}
+
+          <div class="schedule-page__training">
+            <p class="schedule-page__title-training">
+              {{training.title}}
+            </p>
+            <div class="schedule-page__time">
+              {{training.time}}
+            </div>
+            <div class="schedule-page__master">
+              {{training.master}}
+            </div>
+          </div>
+          {% endfor %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="schedule-stretching-training" class="schedule-page orange-block">
+    <div class="container">
+      <h1 class="title-page schedule-page__title">
+        <span class="schedule-page__color">Расписание</span> тренажерных занятий
+      </h1>
+      <ul class="schedule-page__list">
+        {% for item in scheduleStrengthTraining %}
+        <li class="schedule-page__item">
+          <div class="schedule-page__day-box">
+            <p class="schedule-page__day">
+              {{item.day}}
+            </p>
+          </div>
+          {% for training in item.trainings %}
+          <div class="schedule-page__training">
+            <p class="schedule-page__title-training">
+              {{training.title}}
+            </p>
+            <div class="schedule-page__time">
+              {{training.time}}
+            </div>
+            <div class="schedule-page__master">
+              {{training.master}}
+            </div>
+          </div>
+          {% endfor %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

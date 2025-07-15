@@ -1,0 +1,36 @@
+{% set title = "Фотогалерея" %}
+{% extends "layouts/default.html" %}
+{% block content %}
+
+<main class="main">
+  <section class="photos">
+    <div class="container">
+      <h1 class="title-page photos__title">
+        Фотогалерея
+      </h1>
+      <ul class="photos__list">
+        {% set i = 1 %}
+        {% for item in teamPage.trainers %}
+
+        <li class="photos__item">
+          {% if i < 10 %} 
+          <p class="photos__number">0{{ i }}</p>
+            {% else %}
+            <p class="photos__number">{{ i }}</p>
+            {% endif %}
+
+            {% if item.img %}
+            <img class="photos__img" src="{{item.img}}" alt="{{item.alt}}">
+            {% else %}
+            <img class="photos__img" src="{{teamPage.notFoundImg}}" alt="Нет фотографии">
+            {% endif %}
+        </li>
+
+        {% set i = i + 1 %}
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+@use  "_vars" as *
+
+.aerobic
+  padding-top: 50px
+  padding-bottom: 150px
+  position: relative
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 828px
+    height: 638px
+    background-image: url(/assets/img/aerobic-decoration1.png)
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    right: 0
+    width: 1426px
+    height: 806px
+    background-image: url(/assets/img/aerobic-decoration2.png)
+    z-index: 0
+  &__box
+    position: relative
+    z-index: 1
+  &__title
+    border-top: 60px
+  &__subtitle
+    font-family: $font-title
+    font-style: italic
+    font-weight: 700
+    font-size: 40px
+    line-height: 120%
+    text-transform: uppercase
+    text-align: center
+    color: $white-color
+  &__list
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 55px
+    padding-top: 20px
+  &__img
+    filter: grayscale(1)
+    transition: filter $anim
+    display: grid
+    object-fit: cover
+    width: 100%
+    grid-column: 1/2
+    grid-row: 1/3
+  &__title-box
+    grid-column: 1/2
+    grid-row: 2/3
+    display: grid
+    padding: 20px 
+    z-index: 1
+    position: relative
+    margin-bottom: 20px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: -20px
+      width: 0
+      height: 100%
+      background: $orange-color
+      z-index: 0
+      opacity: 0
+      transition: width $anim, opacity $anim
+  &__title-item
+    font-size: 20px
+    font-weight: 500
+    color: $white-color
+    position: relative
+    z-index: 1
+  &__link
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr auto
+    &:hover, &:active, &:focus
+      .aerobic__img
+        filter: grayscale(0)
+      .aerobic__title-box
+        &::before
+          width: 100%
+          opacity: 1
+  &__group
+    display: grid
+    margin-bottom: 100px
+    &:last-child
+      margin-bottom: 0
+

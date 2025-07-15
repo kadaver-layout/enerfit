@@ -36,7 +36,7 @@ const path = {
     data: "src/data/**/*.{json,js}",
     scss: ["src/assets/styles/main.sass", "src/assets/styles/libs/*.*"],
     js: "src/assets/js/**/*.{js,ts}",
-    image: "src/assets/img/**/*.{jpg,jpeg,png,gif,svg}",
+    image: "src/assets/img/**/*.{jpg,jpeg,png,gif,svg,ico}",
     fonts: "src/assets/fonts/**/*.{woff,woff2,ttf}",
     libsCss: "node_modules/@splidejs/splide/dist/css/*.min.css", // Добавлен источник для CSS
   },

@@ -1,0 +1,29 @@
+@use  "_vars" as *
+
+.photos
+  padding: 50px 0
+  &__list
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 70px 60px
+  &__item
+    display: grid
+    position: relative
+  &__number
+    position: absolute
+    font-family: $font-title
+    font-style: italic
+    font-weight: 700
+    font-size: 73px
+    text-transform: uppercase
+    color: $white-color
+    opacity: 0.5
+    left: 15px
+    top: 15px
+    z-index: 1
+  &__img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    position: relative
+    z-index: 0

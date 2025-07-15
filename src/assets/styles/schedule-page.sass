@@ -1,0 +1,64 @@
+@use  "_vars" as *
+
+.schedule-page
+  padding-top: 50px
+  padding-bottom: 50px
+  &.red-block
+    .schedule-page__title-training
+      color: $red
+    .schedule-page__day-box
+      background: $red
+    .schedule-page__color
+      color: $red
+  &.orange-block
+    .schedule-page__title-training
+      color: $orange-color
+    .schedule-page__day-box
+      background: $orange-color
+    .schedule-page__color
+      color: $orange-color
+  &__list
+    display: grid
+    grid-template-columns: repeat(7, 1fr)
+    gap: 45px
+    align-items: start
+  &__item
+    display: grid
+    gap: 10px
+    align-items: start
+  &__day-box
+    display: grid
+    padding: 20px 5px
+    background: $orange-color
+  &__day
+    font-family: $font-title
+    font-weight: 900
+    font-size: 16px
+    text-transform: uppercase
+    color: $white-color
+    text-align: center
+  &__training
+    padding: 18px
+    background: $white-color
+    gap: 10px
+  &__title-training
+    font-family: $font-title
+    font-weight: 900
+    font-size: 16px
+    text-transform: uppercase
+    color: $orange-color
+    text-align: center
+  &__time
+    font-family: $font-title
+    font-weight: 900
+    font-size: 16px
+    text-transform: uppercase
+    color: $black
+    text-align: center
+  &__master
+    font-family: $font-title
+    font-weight: 500
+    font-size: 14px
+    color: $black
+    text-align: center
+    padding-top: 3px

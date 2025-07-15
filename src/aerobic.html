@@ -1,0 +1,57 @@
+{% set title = "Аэробные направления" %}
+{% extends "layouts/default.html" %}
+{% block content %}
+
+<main class="main">
+  <section class="aerobic">
+    <div class="container">
+      <div class="aerobic__box">
+        <h1 class="title-page aerobic__title">
+          Аэробные
+          <span class="orange">направления</span>
+        </h1>
+        <div class="aerobic__group">
+          <h2 class="aerobic__subtitle">
+            <span class="red"> Силовые</span> тренировки:
+          </h2>
+          <ul class="aerobic__list">
+            {% for item in aerobic.group1 %}
+            <li class="aerobic__item">
+              <a class="aerobic__link" href="http://">
+                <img class="aerobic__img" src="{{item.img}}" alt="{{item.alt}}">
+                <div class="aerobic__title-box">
+                  <h3 class="aerobic__title-item">
+                    {{item.title}}
+                  </h3>
+                </div>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="aerobic__group">
+          <h2 class="aerobic__subtitle">
+            занятия 
+            <span class="orange"> на растяжку:</span>
+          </h2>
+          <ul class="aerobic__list">
+            {% for item in aerobic.group2 %}
+            <li class="aerobic__item">
+              <a class="aerobic__link" href="http://">
+                <img class="aerobic__img" src="{{item.img}}" alt="{{item.alt}}">
+                <div class="aerobic__title-box">
+                  <h3 class="aerobic__title-item">
+                    {{item.title}}
+                  </h3>
+                </div>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}
