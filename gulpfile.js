@@ -38,6 +38,7 @@ const path = {
     js: "src/assets/js/**/*.{js,ts}",
     image: "src/assets/img/**/*.{jpg,jpeg,png,gif,svg}",
     fonts: "src/assets/fonts/**/*.{woff,woff2,ttf}",
+    libsCss: "node_modules/@splidejs/splide/dist/css/*.min.css", // Добавлен источник для CSS
   },
   dist: {
     base: "dist/",
@@ -48,36 +49,22 @@ const path = {
     fonts: "dist/assets/fonts/",
   },
   watch: {
-    html: "src/**/*.html", // Изменено на src/**/*.html для отслеживания всех HTML-файлов
+    html: "src/**/*.html",
     data: "src/data/**/*.{json,js}",
     scss: "src/assets/styles/**/*.{sass,scss}",
     js: "src/assets/js/**/*.{js,ts}",
     image: "src/assets/img/**/*.{jpg,jpeg,png,gif,svg}",
     fonts: "src/assets/fonts/**/*.{woff,woff2,ttf}",
+    libsCss: "node_modules/@splidejs/splide/dist/css/*.min.css", // Отслеживание изменений
   },
 };
 
-const projectConfig = JSON.parse(readFileSync("./projectConfig.json", "utf8"));
-
 function serverStart() {
   server.init({
-    server: {
-      baseDir: path.dist.base,
-      mimeTypes: {
-        woff: "font/woff",
-        woff2: "font/woff2",
-        ttf: "font/ttf",
-      },
-    },
+    server: { baseDir: path.dist.base, mimeTypes: { woff: "font/woff", woff2: "font/woff2", ttf: "font/ttf" } },
     notify: false,
     online: true,
-    snippetOptions: {
-      rule: {
-        fn: function (snippet, match) {
-          return `<script async src="/browser-sync/browser-sync-client.js?v=3.0.4"></script>${match}`;
-        },
-      },
-    },
+    snippetOptions: { rule: { fn: (snippet, match) => `<script async src="/browser-sync/browser-sync-client.js?v=3.0.4"></script>${match}` } },
   });
 }
 
@@ -87,21 +74,18 @@ async function clean() {
 
 function html() {
   return gulp
-    .src("src/*.html")
+    .src(path.src.html)
     .pipe(plumber())
-    .pipe(data(() => JSON.parse(fs.readFileSync("src/data/data.json", "utf8"))))
-    .pipe(
-      nunjucksRender({
-        path: ["src/html"],
-      })
-    )
+    .pipe(data(() => fs.existsSync("src/data/data.json") ? JSON.parse(readFileSync("src/data/data.json", "utf8")) : {}))
+    .pipe(nunjucksRender({ path: ["src/html"] }))
     .pipe(gulp.dest(path.dist.html))
     .pipe(server.reload({ stream: true }));
 }
 
 function scss() {
   const libsStream = gulp
-    .src("src/assets/styles/libs/*.*")
+    .src(path.src.scss[1])
+    .pipe(plumber())
     .pipe(gulpif(isDev(), sourcemaps.init()))
     .pipe(sassCompiler().on("error", sassCompiler.logError))
     .pipe(gulpif(isProd(), autoprefixer({ grid: true })))
@@ -110,7 +94,8 @@ function scss() {
     .pipe(gulp.dest(path.dist.css + "libs"));
 
   const mainStream = gulp
-    .src("src/assets/styles/main.sass")
+    .src(path.src.scss[0])
+    .pipe(plumber())
     .pipe(gulpif(isDev(), sourcemaps.init()))
     .pipe(sassCompiler().on("error", sassCompiler.logError))
     .pipe(gulpif(isProd(), autoprefixer({ grid: true })))
@@ -122,19 +107,25 @@ function scss() {
   return merge(libsStream, mainStream).pipe(server.stream());
 }
 
+function copyLibsCss() {
+  return gulp
+    .src(path.src.libsCss)
+    .pipe(plumber())
+    .pipe(newer(path.dist.css + "libs")) // Копирует только новые или измененные файлы
+    .pipe(gulp.dest(path.dist.css + "libs"))
+    .pipe(server.reload({ stream: true }));
+}
+
 function js() {
   return gulp
     .src(path.src.js)
     .pipe(plumber())
-    .pipe(
-      webpackStream(
-        {
-          mode: isProd() ? "production" : "development",
-          output: { filename: "app.js" },
-        },
-        webpack
-      )
-    )
+    .pipe(webpackStream({
+      mode: isProd() ? "production" : "development",
+      module: { rules: [{ test: /\.ts$/, use: "ts-loader" }] },
+      resolve: { extensions: [".ts", ".js"] },
+      output: { filename: "app.js" },
+    }, webpack))
     .pipe(gulpif(isProd(), terser()))
     .pipe(gulp.dest(path.dist.js))
     .pipe(server.reload({ stream: true }));
@@ -142,46 +133,26 @@ function js() {
 
 function image() {
   return gulp
-    .src("src/assets/img/**/*.{jpg,jpeg,png,gif,svg}", { encoding: false })
-    .pipe(
-      plumber({
-        errorHandler: function (err) {
-          console.log("Image processing error:", err.message);
-          this.emit("end");
-        },
-      })
-    )
-    .pipe(newer("dist/assets/img"))
-    .pipe(gulp.dest("dist/assets/img"))
-    .pipe(gulp.src("src/assets/img/**/*.{jpg,jpeg,png}", { encoding: false }))
-    .pipe(
-      plumber({
-        errorHandler: function (err) {
-          console.log("WebP conversion error:", err.message);
-          this.emit("end");
-        },
-      })
-    )
+    .src(path.src.image, { encoding: false })
+    .pipe(plumber({ errorHandler: (err) => { console.log("Image error:", err.message); this.emit("end"); } }))
+    .pipe(newer(path.dist.image))
+    .pipe(gulp.dest(path.dist.image))
+    .pipe(gulp.src(path.src.image.replace("svg", ""), { encoding: false }))
+    .pipe(plumber({ errorHandler: (err) => { console.log("WebP error:", err.message); this.emit("end"); } }))
     .pipe(webp({ quality: 80 }))
-    .pipe(gulp.dest("dist/assets/img"))
+    .pipe(gulp.dest(path.dist.image))
     .pipe(server.reload({ stream: true }));
 }
 
 function fonts() {
   return gulp
-    .src("src/assets/fonts/**/*.{woff,woff2,ttf}", { encoding: false })
-    .pipe(
-      plumber({
-        errorHandler: function (err) {
-          console.log("Font processing error:", err.message);
-          this.emit("end");
-        },
-      })
-    )
-    .pipe(newer("dist/assets/fonts"))
-    .pipe(gulp.dest("dist/assets/fonts"))
+    .src(path.src.fonts, { encoding: false })
+    .pipe(plumber({ errorHandler: (err) => { console.log("Font error:", err.message); this.emit("end"); } }))
+    .pipe(newer(path.dist.fonts))
+    .pipe(gulp.dest(path.dist.fonts))
     .pipe(server.reload({ stream: true }));
 }
+
 function watch() {
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.data, html);
@@ -189,9 +160,10 @@ function watch() {
   gulp.watch(path.watch.js, js);
   gulp.watch(path.watch.image, image);
   gulp.watch(path.watch.fonts, fonts);
+  gulp.watch(path.watch.libsCss, copyLibsCss); // Отслеживание изменений в libsCss
 }
 
-const build = gulp.series(clean, gulp.parallel(html, scss, js, image, fonts));
+const build = gulp.series(clean, gulp.parallel(html, scss, js, image, fonts, copyLibsCss));
 const dev = gulp.series(build, gulp.parallel(watch, serverStart));
 
 export { build, dev };

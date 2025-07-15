@@ -3,69 +3,108 @@
 {% extends "layouts/default.html" %}
 {% block content %}
 
-<main class="main">
-  {% include "includes/banner.html" %}
+  <main class="main">
+    {% include "includes/banner.html" %}
 
-  <section class="section schedule bg-white-gradient">
-    <div class="container">
-      <div class="schedule__box">
-        <a class="schedule__card" href="{{schedule.link-schedule}}">
-          <h2 class="schedule__title">
-            <span class="orange">
+    <section class="section schedule bg-white-gradient">
+      <div class="container">
+        <div class="schedule__box">
+          <a class="schedule__card" href="{{schedule.link-schedule}}">
+            <h2 class="schedule__title">
+              <span class="orange">
               Расписание
             </span>
             занятий
           </h2>
-          <ul class="schedule__list">
-            {% for day in schedule.days %}
-            <li class="schedule__item">
-              <div class="schedule__day-box">
-                <p class="schedule__day">
-                  {{day.day}}
-                </p>
-              </div>
-              <div class="schedule__info">
-                <p class="schedule__info-title">
-                  {{day.title}}
-                </p>
-                <p class="schedule__time">
-                  {{day.time}}
-                </p>
-                <p class="schedule__master">
-                  {{day.master}}
-                </p>
-              </div>
-            </li>
-            {% endfor %}
-          </ul>
-        </a>
-        <a class="schedule__card" href="{{schedule.link-prices}}">
-          <h2 class="schedule__title">
-            <span class="orange">
+            <ul class="schedule__list">
+              {% for day in schedule.days %}
+                <li class="schedule__item">
+                  <div class="schedule__day-box">
+                    <p class="schedule__day">
+                      {{day.day}}
+                    </p>
+                  </div>
+                  <div class="schedule__info">
+                    <p class="schedule__info-title">
+                      {{day.title}}
+                    </p>
+                    <p class="schedule__time">
+                      {{day.time}}
+                    </p>
+                    <p class="schedule__master">
+                      {{day.master}}
+                    </p>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </a>
+          <a class="schedule__card" href="{{schedule.link-prices}}">
+            <h2 class="schedule__title">
+              <span class="orange">
               Цена на
             </span>
             клубные карты
           </h2>
-          <div class="schedule__img-box">
-            <img src="{{schedule.priceImg}}" alt="">
-          </div>
-        </a>
+            <div class="schedule__img-box">
+              <img src="{{schedule.priceImg}}" alt="">
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="section services">
-    <div class="container">
-      <h2 class="services__title">
-        {{service.title}}
-      </h2>
-      <p class="services__text white">
-        {{service.subtitle1}}
-      </p>
-      <p class="services__text gray">
-        {{service.subtitle2}}
-      </p>
-    </div>
-  </section>
-</main>
+    </section>
+    <section class="section services">
+      <div class="container">
+        <div class="services__box">
+          <div class="services__title-box">
+            <h2 class="services__title">
+              {{service.title}}
+            </h2>
+            <p class="services__text white">
+              {{service.subtitle1}}
+            </p>
+            <p class="services__text grey">
+              {{service.subtitle2}}
+            </p>
+          </div>
+          <div class="splide services__splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% for slide in service.slides %}
+                  <li class="splide__slide">
+                    <img src="{{slide.img}}" alt="{{slide.alt}}">
+                    <p class="splide__text">
+                      {{slide.title}}
+                    </p>
+                  </li>
+                  {%endfor%}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section tickets">
+      <div class="container">
+        <div class="tickets__box">
+          <div class="tickets__left">
+            <h3 class="tickets__title">
+             Хочу абонемент <br> в фитнес клуб <br>
+              <strong class="orange">
+                по специальной цене
+              </strong>
+            </h3>
+            <button class="tickets__btn">
+              Записаться
+            </button>
+          </div>
+          <div class="tickets__right">
+            <img src="{{tickets.img}}" alt="{{tickets.alt}}">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
 {% endblock %}

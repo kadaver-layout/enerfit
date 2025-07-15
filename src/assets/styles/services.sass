@@ -1,0 +1,66 @@
+@use  "_vars" as *
+
+.services
+  &__box
+    position: relative
+    display: grid
+    gap: 90px
+  &__title
+    font-family: $font-title
+    font-style: italic
+    font-weight: 700
+    font-size: 103px
+    line-height: 120%
+    letter-spacing: -0.01em
+    text-align: center
+    color: $orange-color
+  &__text
+    font-family: $font-title
+    font-style: italic
+    font-weight: 700
+    font-size: 76px
+    line-height: 120%
+    letter-spacing: -0.01em
+    color: $white-color
+    text-align: center
+  .splide__arrow
+    background: rgba(255, 255, 255, 0.7)
+    border: none
+    width: 108px
+    height: 108px
+    border-radius: 50%
+    padding: 10px
+    cursor: pointer
+    display: grid
+    justify-content: center
+    box-shadow: 1px 2px 18px 0 #e5e5e5
+    transition: box-shadow $anim
+    &::before
+      content: ''
+      background: url(/assets/img/arrow-slider.png) no-repeat center
+      width: 39px
+      height: 71px
+      position: relative
+    & svg
+      display: none
+.splide
+  &__arrow--prev
+    left: -50px
+    &::before
+      left: -7px
+  &__arrow--next
+    right: -50px
+    &::before
+      transform: rotate(180deg)
+      right: -7px
+  &__arrow:hover
+    box-shadow: 1px 2px 23px 0 #fff
+  &__text
+    font-family: $font-title
+    font-weight: 700
+    font-size: 28px
+    line-height: 100%
+    text-transform: uppercase
+    color: #dbdbdb
+    text-align: center
+    margin-top: 30px

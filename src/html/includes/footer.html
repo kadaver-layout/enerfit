@@ -1,0 +1,56 @@
+<footer class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-main__box">
+        <div class="footer-main__logo">
+          <img src="assets/img/logo.png" alt="logo">
+        </div>
+        <div class="footer-main__nav">
+          <nav class="footer-main__nav">
+            <ul class="footer-main__list">
+              {% for link in header.links %}
+                <li class="header__item">
+                  <a class="header__link" href={{link.href}}>{{link.title}}</a>
+                </li>
+              {% endfor %}
+              <li class="header__item">
+                <a class="header__link" href={{link.href}}>{{header.linkText}}</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-main__contact">
+          <div class="footer-main__contact-box">
+            <a href="{{header.waLink}}">
+              <img width="31" height="31" src="{{header.waImg}}" alt="Ссылка на WhatsApp">
+            </a>
+            <a href="tel:+74862{{header.tel}}" class="footer-main__phone">+7(4862) {{header.tel}}</a>
+          </div>
+          <p class="footer-main__address">{{header.address}}</p>
+          <div class="footer-main__requisites">
+            {% for item in requisites %}
+              <p class="footer-main__requisites-item">
+                {{item.title}}
+                {{item.text}}
+              </p>
+            {% endfor %}
+          </div>
+          <a class="footer-main__policy-link" href="http://">
+          Политика конфиденциальности</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom__text-box">
+        <span>
+              Сайт разработан при сотрудничестве с ООО "Регион Центр". По вопросам продвижения и технической поддержки сайта обращайтесь: 
+              </span>
+        <a href="tel:+74862509139">+7(4862) 50-91-39</a>,
+              <a href="mailto:manager@vorle.ru"> manager@vorle.ru</a>,
+              <a href="http://www.sait-region.ru">www.sait-region.ru</a>
+      </div>
+    </div>
+  </div>
+</footer>
