@@ -23,26 +23,7 @@
     letter-spacing: -0.01em
     color: $white-color
     text-align: center
-  .splide__arrow
-    background: rgba(255, 255, 255, 0.7)
-    border: none
-    width: 108px
-    height: 108px
-    border-radius: 50%
-    padding: 10px
-    cursor: pointer
-    display: grid
-    justify-content: center
-    box-shadow: 1px 2px 18px 0 #e5e5e5
-    transition: box-shadow $anim
-    &::before
-      content: ''
-      background: url(/assets/img/arrow-slider.png) no-repeat center
-      width: 39px
-      height: 71px
-      position: relative
-    & svg
-      display: none
+
 .splide
   &__arrow--prev
     left: -50px
@@ -64,3 +45,24 @@
     color: #dbdbdb
     text-align: center
     margin-top: 30px
+
+.splide__arrow
+  background: rgba(255, 255, 255, 0.7)
+  border: none
+  width: 108px
+  height: 108px
+  border-radius: 50%
+  padding: 10px
+  cursor: pointer
+  display: grid
+  justify-content: center
+  box-shadow: 1px 2px 18px 0 #e5e5e5
+  transition: box-shadow $anim
+  &::before
+    content: ''
+    background: url(/assets/img/arrow-slider.png) no-repeat center
+    width: 39px
+    height: 71px
+    position: relative
+  & svg
+    display: none

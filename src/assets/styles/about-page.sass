@@ -1,0 +1,159 @@
+@use  "_vars" as *
+
+.about-subtitle
+  font-family: $font-family
+  font-weight: 400
+  font-size: 70px
+  text-transform: uppercase
+  text-align: center
+  color: #fff
+.about-page
+  padding-top: 50px
+  padding-bottom: 50px
+  position: relative
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 828px
+    height: 638px
+    background-image: url(/assets/img/aerobic-decoration1.png)
+  &__title-box
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      top: -150px
+      right: 0
+      width: 426px
+      height: 426px
+      background-image: url(/assets/img/fitness-page_bg.png)
+      z-index: 0
+  &__subtitle
+    font-family: $font-title
+    font-style: italic
+    font-weight: 700
+    font-size: 33px
+    letter-spacing: 0em
+    color: #f1f1f3
+  &__title
+    text-align: start
+  &__list
+    display: grid
+    grid-template-columns: 1fr
+    gap: 70px
+    position: relative
+    padding-top: 70px
+  &__item
+    display: grid
+    grid-template-columns: 737px 1fr
+    padding-left: 70px
+    &:nth-child(2n)
+      grid-template-columns: 1fr 737px
+      padding-left: 0
+      padding-right: 70px
+      .about-page__img
+        order: 2
+
+  &__content
+    display: grid
+    gap: 30px
+    padding: 50px 40px
+    background: $white-color
+    align-content: start
+  &__text-box
+    display: grid
+    gap: 30px
+  &__title-item
+    font-family: $font-family
+    font-weight: 400
+    font-size: 32px
+    letter-spacing: 0em
+    color: $orange-color
+  &__text
+    font-family: $font-family
+    font-weight: 400
+    font-size: 17px
+    line-height: 174%
+    letter-spacing: 0.01em
+    color: #2f2c2d
+
+.about-photos
+  padding-bottom: 50px
+  &__splide
+    margin-top: 50px
+  &__link
+    font-family: $font-title
+    font-style: italic
+    font-weight: 700
+    font-size: 24px
+    text-transform: uppercase
+    text-align: center
+    color: $orange-color
+    background: $background-card
+    padding: 20px 40px
+    display: grid
+    justify-self: center
+    margin-top: 50px
+    transition: transform $anim
+    &:active, &:hover, &:focus
+      transform: scale(1.1)
+
+.about-services
+  padding-top: 50px
+  padding-bottom: 50px
+  &__list
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 40px 45px
+    padding-top: 70px
+    padding-bottom: 50px
+  &__item
+    display: grid
+    padding: 40px 50px
+    background: #f8f8f8
+    box-shadow: 0 1px 21px 0 rgba(30, 30, 30, 0.36)
+    justify-items: start
+  &__content
+    display: grid
+    gap: 38px
+    position: relative
+    grid-auto-flow: column
+    align-items: center
+    &::before
+      content: ""
+      width: 128px
+      height: 128px
+      background-color: #f0f1f3
+      box-shadow: 0 2px 21px 0 rgba(30, 30, 30, 0.45)
+      border-radius: 50%
+      background-position: center
+      background-size: 45%
+      background-repeat: no-repeat
+    &--cart::before
+      background-image: url(/assets/img/services__cart.svg)
+    &--freeze::before
+      background-image: url(/assets/img/services__freeze.svg)
+    &--hamam::before
+      background-image: url(/assets/img/services__hamam.svg)
+    &--locker::before
+      background-image: url(/assets/img/services__locker.svg)
+    &--towel::before
+      background-image: url(/assets/img/services__towel.svg)
+    &--solarium::before
+      background-image: url(/assets/img/services__solarium.svg)
+  &__text
+    font-family: $font-title
+    font-weight: 700
+    font-size: 23px
+    line-height: 153%
+    color: #2f2c2d
+
+
+.about-map
+  margin-bottom: 138px
+  &__box
+    min-height: 434px
+    margin-top: 70px
