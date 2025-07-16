@@ -1,0 +1,75 @@
+{% set title = "Контакты Fitness Energy" %}
+{% extends "layouts/default.html" %}
+{% block content %}
+
+  <main class="main">
+    <section class="contacts-page">
+      <div class="container">
+        <h1 class="title-page contacts-page__title">
+          Контакты
+        </h1>
+
+        <div class="contacts-page__box">
+          <div class="contacts-page__content">
+
+            {# ///1/// #}
+            <div class="contacts-page__img-box">
+              <img src="assets/img/logo.png" alt="logo">
+              <p class="contacts-page__address">{{contacts.address | safe}}</p>
+            </div>
+            {# ////2//// #}
+            <div class="contacts-page__item">
+              <label class="contacts-page__label">
+                <p class="contacts-page__text">телефон для любого вопроса</p>
+                <div class="contacts-page__link-box">
+                  <a href="{{contacts.waLink}}" class="contacts-page__waLink">
+                    <img src="{{contacts.waImg}}" alt="Иконка WhatsApp"></a>
+                  <a href="tel:{{contacts.tel}}" class="contacts-page__link">{{contacts.tel}}</a>
+                </div>
+              </label>
+              <div class="contacts-page__work-time">
+                <label class="contacts-page__label">
+                  ПН-ПТ 
+                  <p class="contacts-page__time">07:00-23:00</p>
+                </label>
+                <label class="contacts-page__label">
+                  СБ-ВС
+                  <p class="contacts-page__time">09:00-21:00</p>
+                </label>
+              </div>
+            </div>
+            {# ////3//// #}
+            <div class="contacts-page__requisites-box">
+              <div class="contacts-page__requisites">
+                {% for item in requisites %}
+                  <p class="contacts-page__requisites-text">{{item.title}}
+                    {{item.text}}</p>
+                {% endfor %}
+              </div>
+              <div class="contacts-page__vk-box">
+                <a href="{{contacts.vkLink}}">
+                  <img src="{{contacts.vkImg}}" alt="vk">
+                </a>
+              </div>
+
+            </div>
+            {# ///// 4//// #}
+            <div class="contacts-page__btn-box">
+              <button class="contacts-page__btn">
+                {{contacts.linkText}}
+              </button>
+            </div>
+          </div>
+          <img class="contacts-page__img" src="assets/img/contacts_img.jpg" alt="Фотография входа в фитнес клуб">
+        </div>
+
+        <div class="contacts-page__map-box map">
+          <iframe frameborder="0" height="100%" src="https://yandex.ru/map-widget/v1/?um=constructor%3A1adc555f1355ae6c95c677407b080de1395c7c36562fd466e1605cc0c709ef63&amp;source=constructor" width="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+{% endblock %}

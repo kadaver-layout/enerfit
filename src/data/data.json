@@ -648,5 +648,16 @@
       "black": "Солярий -<br>",
       "orange": "30 ₽ / минута"
     }
-  ]
+  ],
+  "contacts": {
+    "address": "г. Орёл, <br> ул. Розы Люксембург, д. 4",
+    "tel": "+7 (4862) 48-70-50",
+    "waLink": "https://wa.me/74862487050",
+    "waImg": "assets/img/whatsapp_ico.svg",
+    "linkText": "Хочу абонемент",
+    "vkImg": "assets/img/vk_icon-1.png",
+    "vkLink": "https://vk.com/fitness.energy.orel"
+
+  }
+
 }

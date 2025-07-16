@@ -1,0 +1,90 @@
+@use  "_vars" as *
+
+.contacts-page
+  padding: 50px 0
+  &__box
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    align-content: stretch
+    gap: 35px
+  &__content
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    background: $white-color
+    padding: 60px 55px 40px
+    gap: 45px 30px
+  &__img-box
+    display: grid
+    gap: 40px
+  &__address
+    font-style: normal
+    font-size: 20px
+    font-weight: 600
+    color: $black-color-title
+  &__item
+    display: grid
+    gap: 40px
+  &__label
+    font-size: 13px
+    line-height: 13px
+    color: $black-color-title
+    font-weight: 400
+    text-transform: uppercase
+    display: grid
+    gap: 10px
+    align-items: center
+    justify-items: start
+    align-content: center
+  &__link-box
+    display: grid
+    grid-auto-flow: column
+    gap: 20px
+    justify-content: start
+    align-items: center
+  &__waLink
+    display: grid
+    width: 37px
+    height: 37px
+  &__link
+    font-size: 20px
+    line-height: 20px
+    font-weight: 600
+    color: $black-color-title
+  &__work-time
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 20px
+  &__time
+    font-size: 20px
+    line-height: 20px
+    font-weight: 600
+    color: $black-color-title
+  &__requisites-box
+    display: grid
+    grid-auto-flow: column
+    gap: 20px
+  &__requisites-text
+    font-size: 13px
+    line-height: 23px
+    color: #201c1d
+  &__btn
+    font-family: $font-family
+    font-style: italic
+    font-weight: 700
+    font-size: 24px
+    text-transform: uppercase
+    color: $orange-color
+    padding: 28px 20px
+    box-shadow: 0 1px 21px 0 rgba(30, 30, 30, 0.36)
+    background: $background-card
+    border-radius: 20px
+    transition: box-shadow $anim, transform $anim
+    &:hover, &:active, &:focus
+      box-shadow: 0 1px 25px 0 rgba(30, 30, 30, 0.62)
+      transform: scale(1.1)
+  &__img
+    height: 100%
+    object-fit: cover
+  &__map-box
+    height: 390px
+    margin-top: 30px
