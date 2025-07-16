@@ -2,104 +2,86 @@
 {% extends "layouts/default.html" %}
 {% block content %}
 
-  <main class="main">
-    <section class="about-page">
-      <div class="container">
-        <div class="about-page__title-box">
-          <h1 class="title-page about-page__title">
-        О клубе <span class="orange">фитнес энерджи </span>
-          </h1>
-          <p class="about-page__subtitle">
-            Fitness Energy - 8 фитнес-площадок <br>для решения разных задач
-          </p>
-        </div>
-
-        <ul class="about-page__list">
-          {% for item in aboutPage.cards %}
-            <li class="about-page__item">
-              <img class="about-page__img" src="{{item.img}}" alt="{{item.alt}}">
-
-              <div class="about-page__content">
-                <h2 class="about-page__title-item">
-                  {{item.title}}
-                </h2>
-
-                <div class="about-page__text-box">
-                  {% for desc in item.desc %}
-                    <p class="about-page__text">
-                      {{desc}}
-                    </p>
-                  {% endfor %}
-                </div>
-              </div>
-            </li>
-          {% endfor %}
-        </ul>
+<main class="main">
+  <section class="about-page">
+    <div class="container">
+      <div class="about-page__title-box">
+        <h1 class="title-page about-page__title">
+          О клубе <span class="orange">фитнес энерджи </span>
+        </h1>
+        <p class="about-page__subtitle">
+          Fitness Energy - 8 фитнес-площадок <br>для решения разных задач
+        </p>
       </div>
-    </section>
-    <section class="about-photos">
-      <div class="container">
-        <div class="about-photos__box">
-          <h2 class="about-subtitle">
-            Фотогалерея
-          </h2>
 
-          <div class="splide about-photos__splide">
-            <div class="splide__track">
-              <ul class="splide__list">
-                {% for slide in aboutPage.cards %}
-                  <li class="splide__slide">
-                    <img src="{{slide.img}}" alt="{{slide.alt}}">
-                  </li>
-                  {%endfor%}
-                </ul>
-              </div>
+      <ul class="about-page__list">
+        {% for item in aboutPage.cards %}
+        <li class="about-page__item">
+          <img class="about-page__img" src="{{item.img}}" alt="{{item.alt}}">
+
+          <div class="about-page__content">
+            <h2 class="about-page__title-item">
+              {{item.title}}
+            </h2>
+
+            <div class="about-page__text-box">
+              {% for desc in item.desc %}
+              <p class="about-page__text">
+                {{desc}}
+              </p>
+              {% endfor %}
             </div>
           </div>
-
-          <a href="/photos.html" class="about-photos__link">
-             перейти<br>в фотогалерею
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="about-services">
-      <div class="container">
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  <section class="about-photos">
+    <div class="container">
+      <div class="about-photos__box">
         <h2 class="about-subtitle">
-          услуги
+          Фотогалерея
         </h2>
 
-        <ul class="about-services__list">
-          {% for item in aboutServices %}
-            <li class="about-services__item">
-              <div class="about-services__content about-services__content--{{item.imgClass}}">
-                <span class="about-services__text">
-                  {{item.black | safe}}
-                  <span class="orange">{{item.orange}}</span>
-                </span>
-              </div>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </section>
-
-    <section class="about-map">
-      <div class="container">
-        <h2 class="about-subtitle">
-          Фитнес клуб <br>
-          <span class= "orange">
-            в Заводском районе г. Орла
-          </span>
-        </h2>
-
-        <div class="about-map__box map">
-          <iframe frameborder="0" height="100%" src="https://yandex.ru/map-widget/v1/?um=constructor%3A1adc555f1355ae6c95c677407b080de1395c7c36562fd466e1605cc0c709ef63&amp;source=constructor" width="100%"></iframe>
+        <div class="splide about-photos__splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              {% for slide in aboutPage.cards %}
+              <li class="splide__slide">
+                <img src="{{slide.img}}" alt="{{slide.alt}}">
+              </li>
+              {%endfor%}
+            </ul>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
+
+      <a href="/photos.html" class="about-photos__link">
+        перейти<br>в фотогалерею
+      </a>
+
+    </div>
+    </div>
+  </section>
+  {% include "includes/service-block.html" %}
+
+  <section class="about-map">
+    <div class="container">
+      <h2 class="about-subtitle">
+        Фитнес клуб <br>
+        <span class="orange">
+          в Заводском районе г. Орла
+        </span>
+      </h2>
+
+      <div class="about-map__box map">
+        <iframe frameborder="0" height="100%"
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A1adc555f1355ae6c95c677407b080de1395c7c36562fd466e1605cc0c709ef63&amp;source=constructor"
+          width="100%"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
 
 {% endblock %}

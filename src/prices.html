@@ -2,42 +2,116 @@
 {% extends "layouts/default.html" %}
 {% block content %}
 
-  <main class="main">
-    <section class="prices-page">
-      <div class="price__banner">
-        <div class="container">
-          <div class="price__banner-box">
-            <h1 class="title-page prices-page__title">
+<main class="main">
+  <section class="prices-page">
+    <div class="price-page__banner">
+      <div class="container">
+        <div class="price-page__banner-box">
+          <h1 class="title-page prices-page__title">
             цены
             <span class="orange">
               на клубные карты
             </span>
-            </h1>
-            <div class="price__banner-content">
-              <div class="price__banner-subtitle-box">
-                <p class="price__banner-subtitle">
-                  Разовое посещение стандарт: 500 ₽
-                </p>
-                <p>
-                  Разовое посещение <span class="orange">премиум:</span> 700 ₽
-                </p>
-              </div>
-              <div class="price__banner-description">
-                <p class="price__banner-text">
-                  Можно пользоваться всей инфраструктурой тренажерного зала, а также посетить любое групповое направление. Время не ограничено
-                </p>
-                <b class="price__banner-text strong">
-                  Для оформления требуется документ , удостоверяющий личность
-                </b>
-              </div>
-
-            </>
+          </h1>
+          <div class="price-page__banner-content">
+            <div class="price-page__banner-subtitle-box">
+              <p class="price-page__banner-subtitle">
+                Разовое посещение стандарт: 500 ₽
+              </p>
+              <p class="price-page__banner-subtitle">
+                Разовое посещение <span class="orange">премиум:</span> 700 ₽
+              </p>
+            </div>
+            <div class="price-page__banner-description">
+              <p class="price-page__banner-text">
+                Можно пользоваться всей инфраструктурой тренажерного зала, а также посетить любое групповое направление.
+                Время не ограничено
+              </p>
+              <b class="price-page__banner-text strong">
+                Для оформления требуется документ , удостоверяющий личность
+              </b>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="container">
+      <h2 class="price__subtitle">
+        Цена на фитнес
+      </h2>
+      <div class="price__box">
+        <!-- Премиум -->
+        {% set card = premium %}
+        <div class="price__column">
+          {% include "includes/price-head.html" %}
+          {% include "includes/price-promo.html" %}
+          {% include "includes/form.html" %}
+        </div>
+        <!--  -->
+        <!-- стандарт -->
+        {% set card = standart %}
+        <div class="price__column">
+          {% include "includes/price-head.html" %}
+          {% include "includes/price-promo.html" %}
+          {% include "includes/form.html" %}
+        </div>
+        <!--  -->
+        <!-- Дневной -->
+        {% set card = daytime %}
+        <div class="price__column">
+          {% include "includes/price-head.html" %}
+          {% include "includes/form.html" %}
+        </div>
+        <!--  -->
 
+        <!-- картинка -->
+        <div class="price__column price__column--img">
+          <img class="price__img" src="assets/img/card-item_gray.png" alt="Изображение карт">
+          <p class="price__img-text">
+            Залоговая стоимость карты: <span class="orange">300 ₽</span>
+          </p>
+        </div>
+        <!--  -->
+
+        <!-- персональный тренер -->
+        {% set card = personalTrainer %}
+        <div class="price__column">
+          {% include "includes/dop-card.html" %}
+          {% include "includes/form.html" %}
+        </div>
+
+
+        <!-- сплит -->
+        {% set card = split %}
+        <div class="price__column">
+          {% include "includes/dop-card.html" %}
+          {% include "includes/form.html" %}
+        </div>
+
+
+      </div>
+    </div>
   </section>
+
+  {% include "includes/service-block.html" %}
+
+  <div class="privacy">
+    <div class="container">
+      <ul class="privacy__list">
+        <li class="privacy__item">
+          <a href="http://" class="privacy__link">
+            Пользовательское соглашение
+          </a>
+        </li>
+
+        <li class="privacy__item">
+          <a href="http://" class="privacy__link">
+            Договор оферты
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </main>
 
 {% endblock %}

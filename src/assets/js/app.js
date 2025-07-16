@@ -1,4 +1,5 @@
 import Splide from "@splidejs/splide";
+import InputmaskModule from "inputmask";
 
 document.addEventListener("DOMContentLoaded", () => {
   ///Слайдер
@@ -27,7 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   ///Стилизация активных ссылок
   const links = document.querySelectorAll(".header__link");
-  const currentPath = window.location.pathname.replace(".html", "").split("/")[1] || "home";
+  const currentPath =
+    window.location.pathname.replace(".html", "").split("/")[1] || "home";
 
   links.forEach((link) => {
     const page = link.getAttribute("data-page");
@@ -39,5 +41,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   ///
 
-  
+  ///Маска///
+  const Inputmask = InputmaskModule.default;
+  const phoneInput = document.getElementById("formPhone");
+
+  if (phoneInput) {
+    const mask = new Inputmask({
+      mask: "+7 (999) 999-99-99",
+      showMaskOnHover: false,
+      showMaskOnFocus: true,
+      clearIncomplete: true,
+      // Защита от вставки "8" или "+7" в начало
+      onBeforePaste: (pastedValue) => {
+        return pastedValue.replace(/^(\+7|8)/, "");
+      },
+    });
+
+    mask.mask(phoneInput);
+  }
 });

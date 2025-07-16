@@ -1,0 +1,42 @@
+<div class="price__item price__item--{{ card.classPrefix }}">
+  <div class="price__item-head">
+    <h3 class="price__title-item">
+      {{ card.title }}
+    </h3>
+    <p class="price__text-item">
+      {{ card.desc }}
+    </p>
+
+    {% if card.priceServiceList %}
+    <ol class="price__plus">
+      {% for item in card.priceServiceList %}
+      <li class="price__plus-item">
+        {{ item }}
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+  </div>
+
+  <div class="price__item-body">
+    <ul class="price__body-list">
+      {% for item in card.standatPrise %}
+      <li class="price__body-item">
+        <p class="price__body-text">
+          {{ item.price }}
+        </p>
+        {% if item.text %}
+        <p class="price__body-price">
+          {{ item.text }}
+        </p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% if card.headerCallback %}
+    {% include 'includes/callback.html' %}
+    {% endif %}
+  </div>
+
+
+</div>

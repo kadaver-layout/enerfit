@@ -1,0 +1,22 @@
+<div class="dop-service stocks-page__item">
+
+  <img class="stocks-page__img" src="{{card.img}}" alt="{{card.alt}}">
+  <div class="stocks-page__title-box">
+    <h2 class="stocks-page__title-item">
+      {{card.title}}
+    </h2>
+  </div>
+  <div class="dop-service__text-box stocks-page__text-box">
+    <p class="stocks-page__text">
+      {{card.desc}}
+    </p>
+    <ul>
+      {% for item in card.price %}
+      <li class="stocks-page__text">
+        {{item}}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+</div>

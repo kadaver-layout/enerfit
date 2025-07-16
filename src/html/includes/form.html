@@ -1,0 +1,29 @@
+<div class="price__form-box price__item-body">
+  <h2 class="price__form-title">
+    Хочу абонемент
+  </h2>
+  <form id="form" name="form" method="post" class="price__form" action="">
+    <label class="price__form-label" for="formName">
+      <p>Имя</p>
+      <input required="50" minlength="2" class="price__form-input" id="formName" type="text">
+    </label>
+    <label class="price__form-label" for="formPhone">
+      <p>Телефон</p>
+      <input required class="price__form-input" id="formPhone" type="tel" placeholder="+7 (___) ___-__-__">
+    </label>
+    <div class="price__form-capcha">
+      <input maxlength="10" class="price__form-input" required name="captcha" placeholder="Код с картинки" type="text">
+      <span>
+        <img alt="captcha" src="assets/img/captcha.jpg">
+      </span>
+    </div>
+    <p class="price__form-text">
+      Отправляя данную форму, даю согласие на обработку персональных данных в соответствии с
+      <a class="price__form-link" href="http://">Политикой конфиденциальности</a>
+    </p>
+  </form>
+  <button type="submit" form="form" class="price__form-btn">
+    Отправить
+  </button>
+
+</div>

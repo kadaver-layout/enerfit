@@ -1,0 +1,20 @@
+<section class="about-services">
+  <div class="container">
+    <h2 class="about-subtitle">
+      услуги
+    </h2>
+
+    <ul class="about-services__list">
+      {% for item in aboutServices %}
+      <li class="about-services__item">
+        <div class="about-services__content about-services__content--{{item.imgClass}}">
+          <span class="about-services__text">
+            {{item.black | safe}}
+            <span class="orange">{{item.orange}}</span>
+          </span>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<div class="price__item-body price__promo price__promo--{{ card.promo.classPrefix }}">
+  <div class="price__promo-box">
+    <h4 class="price__promo-title">
+      {{ card.promo.title }} <span class="price__promo-text">{{ card.promo.text }}</span>
+    </h4>
+
+    <div>
+      <p class="price__promo-text">
+        {{ card.promo.subtitle }}
+      </p>
+
+      <ul class="price__body-list">
+
+        {% for item in card.promo.promoPrise %}
+        <li class="price__body-item">
+          <p class="price__body-text">
+            {{ item.price }}
+          </p>
+          {% if item.text %}
+          <p class="price__body-price">
+            {{ item.text }}
+          </p>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% include 'includes/callback.html' %}
+</div>

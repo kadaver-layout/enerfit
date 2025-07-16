@@ -26,6 +26,7 @@
     "gulp-sass": "^6.0.1",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-webp": "^5.0.0",
+    "inputmask": "^5.0.9",
     "merge-stream": "^2.0.0",
     "sass": "^1.89.2",
     "svgo": "^4.0.0",
