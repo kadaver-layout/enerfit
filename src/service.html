@@ -1,0 +1,118 @@
+{% set title = "Услуги" %}
+{% extends "layouts/default.html" %}
+{% block content %}
+
+<main class="main">
+  <section class="service-page">
+    <div class="container">
+      <h1 class="title-page service-page__title">
+        Услуги <span class="orange">фитнес энерджи</span>
+      </h1>
+      <div class="service-page__box">
+        <h2 class="service-page__subtitle">
+          Абонемент включает в себя базовые услуги:
+        </h2>
+        <ul class="service-page__list">
+          {% for item in servicePage.list %}
+          <li class="service-page__item about-services__content service-page__item--{{item.class}}">
+            <span class="service-page__text">
+              {{item.title | safe}}
+            </span>
+          </li>
+          {% endfor %}
+          <li class="service-page__item about-services__content service-page__item--focus">
+            <span class="service-page__text-focus">
+              Занятия, в названии которых содержится обозначение «СЕКЦИЯ» или указана стоимость, являются
+              Дополнительными услугами<br>
+              <span class="orange">Их посещение возможно только после предварительной оплаты</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- доп -->
+      <div class="service-page__box">
+        <h2 class="service-page__subtitle">
+          Дополнительные услуги
+        </h2>
+        <div class="service-page__columns">
+          <!-- персональный тренер -->
+          {% set card = personalTrainer %}
+          <div class="price__column">
+            {% include "includes/dop-card.html" %}
+            {% include "includes/form.html" %}
+          </div>
+
+
+          <!-- сплит -->
+          {% set card = split %}
+          <div class="price__column">
+            {% include "includes/dop-card.html" %}
+            {% include "includes/form.html" %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Секции для взрослых и детей -->
+      <div class="service-page__box">
+        <h2 class="service-page__subtitle">
+          Секции для взрослых и детей
+        </h2>
+        <ul class="service-page__section-list">
+          {% for item in serviceSection %}
+          <li class="service-page__section-item">
+            <a class="service-page__section-link" href="http://">
+              <img class="service-page__section-img" src="{{item.img}}" alt="{{item.alt}}">
+              <div class="service-page__section-content">
+                <div>
+                  <p class="service-page__section-subtitle">
+                    {{item.title}}
+                  </p>
+                  <p class="service-page__section-trainer">
+                    {{item.trainer}}
+                  </p>
+                </div>
+                <p class="service-page__section-desc">
+                  {{item.desc}}
+                </p>
+              </div>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- допкарточки -->
+      <ul class="service-page__dop-list">
+        {% for item in serviceDop %}
+        <li class="service-page__dop-item">
+          <img class="service-page__dop-img" src="{{item.img}}" alt="{{item.alt}}">
+          <div class="service-page__dop-content">
+
+            <div class=" about-services__content about-services__content--{{item.iconClass}}">
+              <div class="service-page__dop-title-box">
+                <h3 class="service-page__dop-title">
+                  {{item.title}}
+                </h3>
+                <p class="service-page__dop-price">{{item.price}}</p>
+              </div>
+            </div>
+
+            <p class="service-page__dop-text">
+              {{item.desc}}
+            </p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <!--  -->
+
+    </div>
+  </section>
+
+
+</main>
+
+
+{% endblock %}

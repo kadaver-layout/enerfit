@@ -1,0 +1,209 @@
+@use  "_vars" as *
+
+.service-page
+  padding-top: 50px
+  padding-bottom: 150px
+  &__list
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 60px
+    justify-items: start
+    margin-top: 80px
+  &__box
+    padding-top: 50px
+    padding-bottom: 50px
+  &__subtitle
+    padding-bottom: 50px
+  &__item
+    display: grid
+    gap: 30px
+    justify-items: start
+    align-items: center
+    &::before
+      width: 115px
+      height: 115px
+    &--service1
+      &::before
+        background-image: url(/assets/img/service1.png)
+    &--service2
+      &::before
+        background-image: url(/assets/img/service2.png)
+    &--service3
+      &::before
+        background-image: url(/assets/img/service3.png)
+    &--service4
+      &::before
+        background-image: url(/assets/img/service4.png)
+    &--service5
+      &::before
+        background-image: url(/assets/img/service5.png)
+    &--service6
+      &::before
+        background-image: url(/assets/img/service6.png)
+    &--service7
+      &::before
+        background-image: url(/assets/img/service7.png)
+    &--service8
+      &::before
+        background-image: url(/assets/img/service8.png)
+    &--service9
+      &::before
+        background-image: url(/assets/img/service9.png)
+    &--service10
+      &::before
+        background-image: url(/assets/img/service10.png)
+    &--focus
+      &::before
+        background-image: url(/assets/img/service-focus.png)
+        background-color: transparent
+        background-size: 100%
+    &:last-child
+      grid-column: span 2
+
+  &__text
+    font-family: $font-title
+    font-weight: 500
+    font-size: 28px
+    line-height: 120%
+    color: #f1f2f4
+  &__text-focus
+    font-family: $font-title
+    font-weight: 500
+    font-size: 28px
+    line-height: 120%
+    color: #f1f2f4
+  &__subtitle
+    font-family: $font-title
+    font-weight: 700
+    font-size: 40px
+    line-height: 120%
+    text-align: center
+    color: #f1f2f4
+  &__columns
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 60px
+  &__section-list
+    display: grid
+    gap: 55px
+    grid-template-columns: repeat(4, 1fr)
+  &__section-link
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr auto
+    position: relative
+    overflow: hidden
+    &::before
+      display: grid
+      content: ""
+      position: absolute
+      width: 100%
+      height: 100%
+      left: 0
+      top: 0
+      background: rgba(32, 28, 29, 0.5)
+      z-index: 1
+    &:hover, &:active, &:focus
+      .service-page__section-img
+        filter: grayscale(0)
+      .service-page__section-content
+        background: rgba(20, 20, 20, 0.7)
+      .aerobic__title-box
+        &::before
+          width: 100%
+          opacity: 1
+      .service-page__section-desc
+        bottom: 0
+        display: block
+        position: relative
+        opacity: 1
+  &__section-img
+    filter: grayscale(1)
+    transition: filter 0.3s ease-in-out
+    display: grid
+    object-fit: cover
+    width: 100%
+    grid-column: 1 / 2
+    grid-row: 1 / 3
+    position: relative
+    z-index: 0
+  &__section-content
+    grid-column: 1 / 2
+    grid-row: 2 / 3
+    display: grid
+    padding: 20px
+    z-index: 1
+    position: relative
+    transition: background 0.3s ease-in-out
+  &__section-desc
+    position: absolute
+    overflow: hidden
+    opacity: 0
+    transition: bottom $anim, position $anim
+  &__section-subtitle
+    font-family: $font-family
+    font-weight: 700
+    font-size: 20px
+    line-height: 120%
+    letter-spacing: -0.02em
+    color: #f1f2f4
+  &__section-trainer
+    font-family: $font-family
+    font-weight: 700
+    font-size: 16px
+    line-height: 120%
+    letter-spacing: -0.01em
+    color: #f1f2f4
+  &__section-desc
+    font-family: $font-family
+    font-weight: 400
+    font-size: 14px
+    line-height: 120%
+    letter-spacing: -0.01em
+    color: #f1f2f4
+    padding-top: 10px
+  &__dop-list
+    display: grid
+    gap: 65px
+  &__dop-item
+    display: grid
+    grid-template-columns: 666px 1fr
+    padding-left: 150px
+    &:nth-child(2n)
+      grid-template-columns: 1fr 666px
+      padding-left: 0
+      padding-right: 150px
+      .service-page__dop-img
+        order: 2
+      .service-page__dop-content
+        padding: 50px 50px 50px 150px
+    .about-services__content
+      justify-content: start
+  &__dop-content
+    padding: 50px 150px 50px 60px
+    background: $white-color
+    display: grid
+    gap: 60px
+  &__dop-title-box
+    display: grid
+  &__dop-title
+    font-family: $font-title
+    font-weight: 700
+    font-size: 33px
+    line-height: 120%
+    letter-spacing: 0em
+    color: #1b1b1b
+  &__dop-price
+    font-family: $font-title
+    font-weight: 700
+    font-size: 33px
+    line-height: 120%
+    letter-spacing: 0em
+    color: $orange-color
+  &__dop-text
+    font-family: $font-family
+    font-weight: 400
+    font-size: 17px
+    line-height: 167%
+    letter-spacing: 0.01em
+    color: #1b1b1b
