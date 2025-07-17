@@ -4,15 +4,28 @@
 .footer-main
   padding-top: 50px
   padding-bottom: 40px
+  &__logo
+    margin-right: 20px
   &__box
     display: grid
     grid-template-columns: repeat(3,auto)
     gap: 20px
     justify-content: space-between
+    @media all and ($s)
+      grid-template-columns: repeat(2,auto)
+    @media all and ($xs)
+      grid-template-columns: 1fr
+      justify-items: center
   &__list
     display: grid
     grid-template-columns: repeat(3, 1fr)
     gap: 20px
+    @media all and ($l)
+      gap: 10px
+      grid-template-columns: repeat(2, 1fr)
+  &__nav
+    @media all and ($s)
+      display: none
   &__phone
     font-weight: 500
     font-size: 14px
@@ -31,6 +44,12 @@
     justify-items: start
     align-content: start
     gap: 20px
+    @media all and ($s)
+      gap: 10px
+    @media all and ($xs)
+      gap: 20px
+      justify-self: center
+      justify-items: center
   &__address
     position: relative
     font-weight: 500
@@ -57,6 +76,8 @@
     letter-spacing: -0.01em
     text-transform: uppercase
     color: #555
+    @media all and ($s)
+      font-size: 12px
   &__policy-link
     font-family: $font-title
     font-weight: 500
@@ -65,18 +86,25 @@
     letter-spacing: -0.03em
     text-transform: uppercase
     color: $orange-color
-    transition: transform $anim 
+    transition: transform $anim
     &:active, &:hover, &:focus
       transform: scale(1.1)
+    @media all and ($s)
+      font-size: 12px
 
 .footer-bottom
   background: #555555
   padding-top: 20px
   padding-bottom: 20px
+  @media all and ($s)
+    padding-top: 10px
+    padding-bottom: 10px
   &__text-box
     display: inline
     text-align: center
     color: $white-color
-    a   
+    a
       color: $white-color
       font-weight: 700
+    @media all and ($s)
+      font-size: 12px

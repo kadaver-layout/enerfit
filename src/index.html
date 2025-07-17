@@ -57,33 +57,33 @@
         <div class="services__box">
           <div class="services__title-box">
             <h2 class="services__title">
-              {{service.title}}
+              {{ service.title }}
             </h2>
             <p class="services__text white">
-              {{service.subtitle1}}
+              {{ service.subtitle1 }}
             </p>
             <p class="services__text grey">
-              {{service.subtitle2}}
+              {{ service.subtitle2 }}
             </p>
           </div>
+
           <div class="splide services__splide">
             <div class="splide__track">
               <ul class="splide__list">
                 {% for slide in service.slides %}
                   <li class="splide__slide">
-                    <img src="{{slide.img}}" alt="{{slide.alt}}">
-                    <p class="splide__text">
-                      {{slide.title}}
-                    </p>
+                    <img src="{{ slide.img }}" alt="{{ slide.alt }}">
+                    <p class="splide__text">{{ slide.title }}</p>
                   </li>
-                  {%endfor%}
-                </ul>
-              </div>
+                {% endfor %}
+              </ul>
             </div>
           </div>
+
         </div>
       </div>
     </section>
+
     <section class="section tickets">
       <div class="container">
         <div class="tickets__box">

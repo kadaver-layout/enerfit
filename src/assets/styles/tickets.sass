@@ -4,6 +4,15 @@
   background: $background-card
   padding-top: 60px
   padding-bottom: 100px
+  @media all and ($l)
+    padding-top: 40px
+    padding-bottom: 80px
+  @media all and ($m)
+    padding-top: 30px
+    padding-bottom: 60px
+  @media all and ($s)
+    padding-top: 20px
+    padding-bottom: 40px
   &__box
     position: relative
     display: grid
@@ -12,6 +21,18 @@
     align-items: center
     align-content: center
     justify-content: space-between
+    @media all and ($xl)
+      gap: 40px
+      grid-template-columns: 1fr 1fr
+    @media all and ($l)
+      gap: 20px
+    @media all and ($m)
+      gap: 10px
+    @media all and ($s)
+      grid-template-columns: 1fr 0.6fr  
+    @media all and ($xs)
+      grid-template-columns: 1fr
+      gap: 30px
   &__title
     font-family: $font-title
     font-style: italic
@@ -20,12 +41,31 @@
     line-height: 120%
     color: $black
     letter-spacing: -0.01em
+    @media all and ($l)
+      font-size: 50px
+    @media all and ($m)
+      font-size: 40px
+    @media all and ($s)
+      font-size: 30px
+    @media all and ($xs)
+      font-size: 25px
+      text-align: center
     strong
       font-variant: normal
       font-feature-settings: normal
       text-transform: uppercase
       font-size: 61px
       font-weight: 700
+      @media all and ($l)
+        font-size: 42px
+      @media all and ($m)
+        font-size: 32px
+      @media all and ($s)
+        font-size: 25px
+      @media all and ($xs)
+        font-size: 20px
+        text-align: center
+
   &__btn
     font-family: $font-title
     font-style: italic
@@ -42,7 +82,32 @@
     transition: box-shadow $anim
     &:active, &:hover, &:focus
       box-shadow: 1px 1px 25px 0 rgba(30, 30, 30, 0.62)
+    @media all and ($l)
+      font-size: 30px
+      padding: 20px 30px
+    @media all and ($m)
+      font-size: 25px
+      padding: 15px 20px
+    @media all and ($s)
+      font-size: 20px
+      padding: 10px 15px
+    @media all and ($xs)
+      font-size: 15px
+
   &__left
     display: grid
     gap: 50px
     justify-items: start
+    @media all and ($xl)
+      gap: 40px
+    @media all and ($l)
+      gap: 30px
+    @media all and ($m)
+      gap: 20px
+    @media all and ($s)
+     justify-content: center
+     justify-items: center
+  &__right
+    @media all and ($xs)
+      max-width: 60vw
+      justify-self: center

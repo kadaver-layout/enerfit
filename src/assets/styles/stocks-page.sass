@@ -3,10 +3,23 @@
 .stocks-page
   padding-top: 50px
   padding-bottom: 150px
+  @media all and ($l)
+    padding-top: 30px
+    padding-bottom: 100px
+  @media all and ($m)
+    padding-top: 20px
+    padding-bottom: 80px
+  @media all and ($s)
+    padding-bottom: 40px
   &__list
     display: grid
     grid-template-columns: repeat(2, 1fr)
     gap: 60px
+    @media all and ($l)
+      gap: 30px
+    @media all and ($s)
+      grid-template-columns: 1fr
+      gap: 20px
   &__item
     grid-template-columns: 1fr
     grid-template-rows: 1fr auto minmax(88px, auto)
@@ -22,12 +35,17 @@
     display: grid
     padding: 20px 50px
     background: rgba(241, 242, 244, 0.78)
+    @media all and ($xl)
+      padding: 20px
   &__text-box
     grid-column: 1/2
     grid-row: 3/4
     display: grid
     padding: 20px 50px
     background: $background-card
+    @media all and ($xl)
+      padding: 20px
+
   &__title-item
     font-family: $font-title
     font-style: italic
@@ -37,6 +55,17 @@
     letter-spacing: -0.01em
     text-transform: uppercase
     color: $black
+    @media all and ($xxl)
+      font-size: 32px
+    @media all and ($xl)
+      font-size: 30px
+    @media all and ($l)
+      font-size: 25px
+    @media all and ($m)
+      font-size: 20px
+    @media all and ($s)
+      font-size: 16px
+    
   &__text
     font-family: $font-family
     font-weight: 400
@@ -44,3 +73,7 @@
     line-height: 120%
     letter-spacing: -0.02em
     color: $black
+    @media all and ($l)
+      font-size: 16px
+    @media all and ($m)
+      font-size: 14px

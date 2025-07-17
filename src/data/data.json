@@ -535,6 +535,138 @@
       ]
     }
   ],
+  "scheduleStrengthTraining2": [
+    {
+      "day": "Понедельник",
+      "trainings": [
+        {
+          "title": "SCULPT",
+          "time": "09:30",
+          "master": "Надежда Пронина"
+        },
+        {
+          "title": "AERO YOGA",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        },
+        {
+          "title": "FITBALL FITBALL FITBALL",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        },
+        {
+          "title": "AEROSTRETCH",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        }
+      ]
+    },
+    {
+      "day": "Вторник",
+      "trainings": [
+        {
+          "title": "SCULPT",
+          "time": "09:30",
+          "master": "Надежда Пронина"
+        },
+        {
+          "title": "AERO YOGA",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        },
+        {
+          "title": "FITBALL",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        }
+      ]
+    },
+    {
+      "day": "Среда",
+      "trainings": [
+        {
+          "title": "SCULPT",
+          "time": "09:30",
+          "master": "Надежда Пронина"
+        },
+        {
+          "title": "AERO YOGA",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        }
+      ]
+    },
+    {
+      "day": "Четверг",
+      "trainings": [
+        {
+          "title": "FITBALL",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        },
+        {
+          "title": "AEROSTRETCH",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        }
+      ]
+    },
+    {
+      "day": "Пятница",
+      "trainings": [
+        {
+          "title": "SCULPT",
+          "time": "09:30",
+          "master": "Надежда Пронина"
+        },
+        {
+          "title": "AERO YOGA",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        }
+      ]
+    },
+    {
+      "day": "Суббота",
+      "trainings": [
+        {
+          "title": "SCULPT",
+          "time": "09:30",
+          "master": "Надежда Пронина"
+        },
+        {
+          "title": "AERO YOGA",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        },
+        {
+          "title": "SCULPT",
+          "time": "09:30",
+          "master": "Надежда Пронина"
+        },
+        {
+          "title": "AERO YOGA",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        }
+      ]
+    },
+    {
+      "day": "Воскресенье",
+      "trainings": [
+        {
+          "title": "SCULPT",
+          "time": "09:30",
+          "master": "Надежда Пронина"
+        },
+        {
+          "title": "AERO YOGA",
+          "time": "07:45",
+          "master": "Надежда Пузанова"
+        }
+      ]
+    }
+  ],
   "aboutPage": {
     "cards": [
       {

@@ -22,6 +22,8 @@
     grid-template-columns: repeat(7, 1fr)
     gap: 45px
     align-items: start
+    @media all and ($xxl)
+      gap: 20px
   &__item
     display: grid
     gap: 10px
@@ -62,3 +64,42 @@
     color: $black
     text-align: center
     padding-top: 3px
+
+// Таб-кнопки — скрыты на больших экранах, видны до 1200px
+.schedule-page__tabs
+  display: none
+
+@media (max-width: 1199.9px)
+  .schedule-page__tabs
+    display: flex
+    gap: 10px
+    flex-wrap: wrap
+    justify-content: center
+    margin-bottom: 20px
+
+  // Список превращается в один столбец
+  .schedule-page__list
+    grid-template-columns: 1fr
+
+  // Скрываем все элементы списка по умолчанию
+  .schedule-page__item
+    display: none
+
+    &.active
+      display: grid
+
+  // Активная таб-кнопка выделяется
+  .schedule-page__tab-btn
+    padding: 8px 16px
+    background-color: $orange-color
+    border: none
+    cursor: pointer
+    color: #fff
+    font-weight: 600
+    text-transform: uppercase
+    border-radius: 4px
+    transition: background-color 0.2s ease
+
+    &.active
+      background-color: $red
+      text-decoration: underline

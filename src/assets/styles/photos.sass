@@ -6,6 +6,16 @@
     display: grid
     grid-template-columns: repeat(4, 1fr)
     gap: 70px 60px
+    @media all and ($xl)
+      gap: 30px
+    @media all and ($l)
+      grid-template-columns: repeat(3, 1fr)
+    @media all and ($m)
+      gap: 20px
+    @media all and ($s)
+      grid-template-columns: repeat(2, 1fr)
+    @media all and ($xs)
+      grid-template-columns: 1fr
   &__item
     display: grid
     position: relative

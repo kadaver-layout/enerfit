@@ -7,23 +7,41 @@
     grid-template-columns: repeat(2, 1fr)
     align-content: stretch
     gap: 35px
+    @media all and ($xl)
+      gap: 20px
+      grid-template-columns: 1fr 0.5fr
+    @media all and ($m)
+      grid-template-columns: 1fr
   &__content
     display: grid
     grid-template-columns: repeat(2, 1fr)
     background: $white-color
     padding: 60px 55px 40px
     gap: 45px 30px
+    @media all and ($xxl)
+      padding: 40px 30px
+    @media all and ($l)
+      padding: 20px
+      gap: 20px
+    @media all and ($xs)
+      grid-template-columns: 1fr
   &__img-box
     display: grid
     gap: 40px
+    @media all and ($s)
+      gap: 20px
   &__address
     font-style: normal
     font-size: 20px
     font-weight: 600
     color: $black-color-title
+    @media all and ($s)
+      font-size: 16px
   &__item
     display: grid
     gap: 40px
+    @media all and ($s)
+      gap: 20px
   &__label
     font-size: 13px
     line-height: 13px
@@ -50,19 +68,25 @@
     line-height: 20px
     font-weight: 600
     color: $black-color-title
+    @media all and ($s)
+      font-size: 16px
   &__work-time
     display: grid
     grid-template-columns: repeat(2, 1fr)
     gap: 20px
+    justify-self: start
   &__time
     font-size: 20px
     line-height: 20px
     font-weight: 600
     color: $black-color-title
+    @media all and ($s)
+      font-size: 16px
   &__requisites-box
     display: grid
     grid-auto-flow: column
     gap: 20px
+    justify-self: start
   &__requisites-text
     font-size: 13px
     line-height: 23px
@@ -82,9 +106,22 @@
     &:hover, &:active, &:focus
       box-shadow: 0 1px 25px 0 rgba(30, 30, 30, 0.62)
       transform: scale(1.1)
+    @media all and ($xxl)
+      font-size: 22px
+    @media all and ($xl)
+      font-size: 20px
+      padding: 20px
+    @media all and ($l)
+      font-size: 18px
+    @media all and ($m)
+      font-size: 16px
   &__img
     height: 100%
     object-fit: cover
   &__map-box
     height: 390px
     margin-top: 30px
+  &__vk-box
+    img 
+      @media all and ($s)
+        width: 40px

@@ -5,6 +5,12 @@
     position: relative
     display: grid
     gap: 90px
+    @media all and ($l)
+      gap: 60px
+    @media all and ($m)
+      gap: 40px
+    @media all and ($s)
+      gap: 20px
   &__title
     font-family: $font-title
     font-style: italic
@@ -14,6 +20,14 @@
     letter-spacing: -0.01em
     text-align: center
     color: $orange-color
+    @media all and ($l)
+      font-size: 80px
+    @media all and ($m)
+      font-size: 60px
+    @media all and ($s)
+      font-size: 40px
+    @media all and ($xs)
+      font-size: 30px
   &__text
     font-family: $font-title
     font-style: italic
@@ -23,17 +37,32 @@
     letter-spacing: -0.01em
     color: $white-color
     text-align: center
+    @media all and ($l)
+      font-size: 50px
+    @media all and ($m)
+      font-size: 40px
+    @media all and ($s)
+      font-size: 30px
+    @media all and ($xs)
+      font-size: 20px
 
 .splide
+  max-width: clamp(320px, 90vw, 1700px)
+  justify-self: center
   &__arrow--prev
     left: -50px
     &::before
       left: -7px
+    @media all and ($m)
+      left: 15px
   &__arrow--next
     right: -50px
     &::before
       transform: rotate(180deg)
       right: -7px
+    @media all and ($m)
+      right: 15px
+
   &__arrow:hover
     box-shadow: 1px 2px 23px 0 #fff
   &__text
@@ -45,7 +74,13 @@
     color: #dbdbdb
     text-align: center
     margin-top: 30px
-
+    @media all and ($m)
+      font-size: 20px
+    @media all and ($s)
+      font-size: 16px
+  &__slide
+    img
+      width: 100%
 .splide__arrow
   background: rgba(255, 255, 255, 0.7)
   border: none
@@ -66,3 +101,25 @@
     position: relative
   & svg
     display: none
+    width: 20px
+    height: 36px
+    top: 50%
+    left: 50%
+    position: absolute
+    transform: translate(-50%, -50%)
+    color: $orange-color
+  @media all and ($m)
+    width: 50px
+    height: 50px
+    &::before
+      width: 20px
+      height: 36px
+      background: none
+    svg
+      display: grid
+    &--prev svg
+      top: auto
+      left: auto
+      right: 50%
+      bottom: 50%
+      transform: translate(50%, 50%) rotate(180deg)

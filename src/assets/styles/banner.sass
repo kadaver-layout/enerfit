@@ -8,6 +8,8 @@
   display: grid
   align-items: center
   align-content: center
+  @media all and ($m)
+    min-height: 50vh
   &__title
     position: relative
     font-family: $font-title
@@ -18,6 +20,15 @@
     letter-spacing: -0.01em
     text-transform: uppercase
     text-align: start
+    @media all and ($xl)
+      font-size: 80px
+    @media all and ($m)
+      font-size: 60px
+    @media all and ($s)
+      font-size: 40px
+    @media all and ($xs)
+      font-size: 30px
+
   &__box
     display: grid
     align-items: center
