@@ -1,5 +1,6 @@
 import Splide from "@splidejs/splide";
 import InputmaskModule from "inputmask";
+import MicroModal from "micromodal";
 
 document.addEventListener("DOMContentLoaded", () => {
   ///Слайдер
@@ -7,19 +8,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (slider) {
     new Splide(slider, {
-      type: 'slide',
+      type: "slide",
       perPage: 3,
-      gap: '50px',
+      gap: "50px",
       arrows: true,
       pagination: false,
       breakpoints: {
         1199: {
           perPage: 2,
-          gap: '20px',
+          gap: "20px",
         },
         768: {
           perPage: 1,
-          gap: '10px',
+          gap: "10px",
         },
       },
     }).mount();
@@ -45,9 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const phoneInput = document.querySelectorAll("input[type=tel]");
 
   if (phoneInput) {
-
     phoneInput.forEach((input) => {
-
       const mask = new Inputmask({
         mask: "+7 (999) 999-99-99",
         showMaskOnHover: false,
@@ -60,11 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       mask.mask(input);
-    }
-
-    );
+    });
   }
-
 
   ///Бургер
   const burger = document.querySelector(".burger");
@@ -86,27 +82,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   ///табы
-  document.querySelectorAll('.schedule-wrapper').forEach(wrapper => {
-    const tabButtons = wrapper.querySelectorAll('.schedule-page__tab-btn');
-    const items = wrapper.querySelectorAll('.schedule-page__item');
+  document.querySelectorAll(".schedule-wrapper").forEach((wrapper) => {
+    const tabButtons = wrapper.querySelectorAll(".schedule-page__tab-btn");
+    const items = wrapper.querySelectorAll(".schedule-page__item");
 
     function switchTab(day) {
-      tabButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.day === day));
-      items.forEach(item => item.classList.toggle('active', item.dataset.day === day));
+      tabButtons.forEach((btn) =>
+        btn.classList.toggle("active", btn.dataset.day === day)
+      );
+      items.forEach((item) =>
+        item.classList.toggle("active", item.dataset.day === day)
+      );
     }
 
-    if (window.matchMedia('(max-width: 1199.9px)').matches && tabButtons.length) {
-      wrapper.classList.add('tabs-enabled');
+    if (
+      window.matchMedia("(max-width: 1199.9px)").matches &&
+      tabButtons.length
+    ) {
+      wrapper.classList.add("tabs-enabled");
       switchTab(tabButtons[0].dataset.day);
 
-      tabButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
+      tabButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
           switchTab(btn.dataset.day);
         });
       });
     }
   });
 
-  ///
+  ///Модалка
 
+  MicroModal.init({
+    openTrigger: "data-micromodal-trigger",
+    closeTrigger: "data-micromodal-close",
+    disableScroll: true,
+    awaitCloseAnimation: true,
+    disableFocus: true,
+    onShow: (modal) => {
+      modal.classList.add("is-open");
+    },
+    onClose: (modal) => {
+      modal.classList.remove("is-open");
+    },
+  });
 });

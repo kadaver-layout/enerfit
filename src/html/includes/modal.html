@@ -1,0 +1,48 @@
+<div class="modal micromodal-slide" id="callback-modal" aria-hidden="true" role="dialog" aria-modal="true"
+  aria-labelledby="modal-title" aria-describedby="modal-description">
+  <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+    <div class="modal__container" role="document">
+      <header class="modal__header">
+        <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+          <img src="assets/img/close.svg" alt="Закрыть">
+        </button>
+      </header>
+      <main class="modal__content" id="modal-description">
+        <div class="price__form-box price__item-body">
+          <h2 class="price__form-title">
+            <span class="black">Хочу абонемент по</span>
+            специальной цене
+          </h2>
+          <form id="form" name="form" method="post" class="price__form" action="">
+            <div class="modal__content">
+              <label class="price__form-label" for="formName">
+                <p>Имя</p>
+                <input required="50" minlength="2" class="price__form-input" id="formName" type="text">
+              </label>
+              <label class="price__form-label" for="formPhone">
+                <p>Телефон</p>
+                <input required class="price__form-input" id="formPhone" type="tel" placeholder="+7 (___) ___-__-__">
+              </label>
+              <div class="price__form-capcha">
+                <input maxlength="10" class="price__form-input" required name="captcha" placeholder="Код с картинки"
+                  type="text">
+                <span>
+                  <img alt="captcha" src="assets/img/captcha.jpg">
+                </span>
+              </div>
+            </div>
+            <div class="modal__content">
+              <p class="price__form-text">
+                Отправляя данную форму, даю согласие на обработку персональных данных в соответствии с
+                <a class="price__form-link" href="http://">Политикой конфиденциальности</a>
+              </p>
+              <button type="submit" form="form" class="price__form-btn">
+                Отправить
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>

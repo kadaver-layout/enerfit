@@ -10,6 +10,10 @@
       background: $red
     .schedule-page__color
       color: $red
+    .schedule-page__training
+      &:hover, &:active, &:focus
+        background: $red
+
   &.orange-block
     .schedule-page__title-training
       color: $orange-color
@@ -17,6 +21,9 @@
       background: $orange-color
     .schedule-page__color
       color: $orange-color
+    .schedule-page__training
+      &:hover, &:active, &:focus
+        background: $orange-color
   &__list
     display: grid
     grid-template-columns: repeat(7, 1fr)
@@ -43,6 +50,10 @@
     padding: 18px
     background: $white-color
     gap: 10px
+    transition: background $anim
+    &:hover, &:active, &:focus
+      .schedule-page__title-training, .schedule-page__time, .schedule-page__master
+        color: $white-color
   &__title-training
     font-family: $font-title
     font-weight: 900
@@ -50,6 +61,7 @@
     text-transform: uppercase
     color: $orange-color
     text-align: center
+    transition: color $anim
   &__time
     font-family: $font-title
     font-weight: 900
@@ -57,6 +69,7 @@
     text-transform: uppercase
     color: $black
     text-align: center
+    transition: color $anim
   &__master
     font-family: $font-title
     font-weight: 500
@@ -64,42 +77,44 @@
     color: $black
     text-align: center
     padding-top: 3px
-
+    transition: color $anim
 // Таб-кнопки — скрыты на больших экранах, видны до 1200px
 .schedule-page__tabs
   display: none
 
-@media (max-width: 1199.9px)
-  .schedule-page__tabs
-    display: flex
-    gap: 10px
-    flex-wrap: wrap
-    justify-content: center
-    margin-bottom: 20px
+@media all and ($l)
+  .schedule-page
+    &__tabs
+      display: flex
+      gap: 10px
+      flex-wrap: wrap
+      justify-content: center
+      margin-bottom: 20px
+    &__day-box
+      display: none
+    &__list
+      grid-template-columns: 1fr
+    &__item
+      display: none
+      &.active
+        display: grid
+    &__tab-btn
+      padding: 8px 16px
+      background-color: $white-color
+      border: none
+      cursor: pointer
+      color: $red
+      font-weight: 600
+      text-transform: uppercase
+      border-radius: 4px
+      transition: background-color 0.2s ease
+      &.active
+        background-color: $red
+        color: $white-color
 
-  // Список превращается в один столбец
-  .schedule-page__list
-    grid-template-columns: 1fr
-
-  // Скрываем все элементы списка по умолчанию
-  .schedule-page__item
-    display: none
-
-    &.active
-      display: grid
-
-  // Активная таб-кнопка выделяется
-  .schedule-page__tab-btn
-    padding: 8px 16px
-    background-color: $orange-color
-    border: none
-    cursor: pointer
-    color: #fff
-    font-weight: 600
-    text-transform: uppercase
-    border-radius: 4px
-    transition: background-color 0.2s ease
-
-    &.active
-      background-color: $red
-      text-decoration: underline
+  .orange-block
+    .schedule-page__tab-btn
+      color: $orange-color
+    .schedule-page__tab-btn.active
+      background-color: $orange-color
+      color: $white-color

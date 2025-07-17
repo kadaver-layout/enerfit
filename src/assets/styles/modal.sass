@@ -1,0 +1,43 @@
+@use  "_vars" as *
+.modal
+  display: none
+  &.is-open
+    display: block
+  &__overlay
+    background: rgba(0, 0, 0, 0.6)
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    z-index: 999
+  &__container
+    background: white
+    padding: 2rem
+    border-radius: 8px
+    max-width: 983px
+    width: 90%
+    position: relative
+  &__close
+    position: absolute
+    top: 1rem
+    right: 1rem
+    background: none
+    border: none
+    font-size: 1.5rem
+    cursor: pointer
+  .price__form
+    gap: 40px
+  &__content
+    display: grid
+    gap: 10px
+  .price__form-capcha
+    padding-top: 17px
+  .price__form-btn
+    justify-self: start
+    align-self: end
+  .price__form-text
+    margin-top: 25px

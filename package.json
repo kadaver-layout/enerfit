@@ -28,6 +28,7 @@
     "gulp-webp": "^5.0.0",
     "inputmask": "^5.0.9",
     "merge-stream": "^2.0.0",
+    "micromodal": "^0.6.1",
     "sass": "^1.89.2",
     "svgo": "^4.0.0",
     "webpack": "^5.99.9",
